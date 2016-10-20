@@ -57,7 +57,7 @@ def automate_schedules(staph,shifts):
 		s = stapher['schedule']
 		total_shifts = len(s[0]) + len(s[1]) + len(s[2]) + len(s[3]) + len(s[4]) + len(s[5]) + len(s[6])
 		print stapher['name'], ':', total_shifts, 'shifts'
-		# print_schedule(stapher)
+		print_schedule(stapher)
 
 def print_schedule(stapher):
 	print stapher['name'], '\'s Schedule'
@@ -65,10 +65,7 @@ def print_schedule(stapher):
 	for i in range(0,7):
 		print '	',days[i]
 		for shift in stapher['schedule'][i]:
-			print '		',shift['title'], 'from', shift['start_time'],'to', shift['end_time']
-	
-
-		
+			print '		',shift['title'], 'from', shift['start_time'],'to', shift['end_time']		
 
 if __name__ == "__main__":
 	all_staph = get_staph_data('2016-ski-dock.csv')
