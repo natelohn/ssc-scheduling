@@ -20,7 +20,7 @@
 0,Town Run,9,11.5
 0,Lunch,12,14
 0,Dock,14,16
-0,Off Day,4,24
+0,Off Day,16,24
 1,Off Day,0,24
 2,Wakeboard Clinic,7.5,10
 2,Dock,10,11.5
@@ -52,7 +52,7 @@
 3,Gas,17,17.5
 3,Teen Ski,17.5,20
 4,Dock,7.5,11
-4,Gas,11,11.5
+4,Gas,11,11.25
 4,Lunch Head,11.25,14
 4,Dock,15,17
 4,Hobart,17.5,20
@@ -141,7 +141,7 @@
 5,Lunch,11.75,13
 5,Dock,14,17
 5,Dinner,17.5,19
-5,Fountain,17,19
+5,Fountain,21,23
 6,Dinner,18,20
 0,Breakfast,8.25,10.25
 0,Lunch Head,11.25,14
@@ -172,7 +172,7 @@
 5,Fountain,21,23
 6,Manager's Meeting,9,9.5
 6,Dinner,17.25,20
-6,Shuffle,20.75,22
+6,Shuffle,21,22
 0,Advanced Clinic,7.5,10
 0,Dock,10,11.25
 0,Gas,11.25,11.5

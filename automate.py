@@ -68,6 +68,8 @@ def print_schedule(stapher):
 			print '		',shift['title'], 'from', shift['start_time'],'to', shift['end_time']		
 
 if __name__ == "__main__":
+	# all_staph = get_staph_data('clur-and-quads.csv')
+	# all_shifts = get_shifts_data('clur-and-quads-shifts.csv')
 	all_staph = get_staph_data('2016-ski-dock.csv')
 	all_shifts = get_shifts_data('2016-ski-dock-shifts.csv')
 	automate_schedules(all_staph,all_shifts)
