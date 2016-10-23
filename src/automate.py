@@ -1,7 +1,5 @@
 import csv
-from stapher import Stapher
-from shift import Shift
-from schedule import Schedule
+from core import Stapher, Shift, Schedule
 
 def get_staph_from_csv(filename):
 	staph_file = open(filename)
@@ -57,10 +55,10 @@ def automate_schedules(staph,shifts):
 		
 
 if __name__ == "__main__":
-	# all_staph = get_staph_data('clur-and-quads.csv')
-	# all_shifts = get_shifts_data('clur-and-quads-shifts.csv')
-	all_staph = get_staph_from_csv('2016-ski-dock.csv')
-	all_shifts = get_shifts_from_csv('2016-ski-dock-shifts.csv')
+	# all_staph = get_staph_data('../input/clur-and-quads.csv')
+	# all_shifts = get_shifts_data('../input/clur-and-quads-shifts.csv')
+	all_staph = get_staph_from_csv('../input/2016-ski-dock.csv')
+	all_shifts = get_shifts_from_csv('../input/2016-ski-dock-shifts.csv')
 	automate_schedules(all_staph,all_shifts)
 
 
