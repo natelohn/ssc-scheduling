@@ -28,39 +28,22 @@ def get_shifts_from_csv(filename):
 	shifts_file.close()
 	return all_shifts
 
-
-def meets_constraints(stapher,shift):
-	# no two people can work one shift
-	if shift.covered:
-		return False
-	# a worker can't work 2 shifts at once
-	elif not stapher.free_during_shift(shift):
-		return False
-	else:
-		return True
-		
-
-def automate_schedules(staph,shifts):
-	uncovered_shifts = Schedule() 
-	for shift in shifts:
-		for stapher in staph:
-			if meets_constraints(stapher, shift):
-				stapher.schedule.add_shift(shift)
-		if not shift.covered:
-			uncovered_shifts.add_shift(shift)
-	# just testing code
-	for stapher in staph:
-		stapher.print_info()
-		stapher.schedule.print_info()
-	print uncovered_shifts.total_shifts, 'LEFT UNCOVERED'	
-
 def generate_schedules(staph, shifts):
+	"""Generates schedules for the given staph."""
+
+	# Create the scheulding CSP (Constraint Satisfaction Problem)
 	scheduling_csp = Problem()
+
+	# Add all the variables
+	# A shift's domain is all staphers, a shift could potentially
+	# be assigned any stapher
 	for shift in shifts:
 		scheduling_csp.addVariable(shift, staph)
 
+	# Add all the constraints to the CSP
 	add_constraints(scheduling_csp, shifts)
 
+	# Get the first possible solution to the CSP
 	solution = scheduling_csp.getSolution()
 
 	for shift, stapher in solution.iteritems():
