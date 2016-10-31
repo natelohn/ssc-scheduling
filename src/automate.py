@@ -106,7 +106,7 @@ def no_overlapping_shifts_constraint(scheduling_csp, shifts):
 				)
 
 if __name__ == "__main__":
-	all_staph = get_staph_from_csv('../input/clur-and-quads.csv')
-	all_shifts = get_shifts_from_csv('../input/clur-and-quads-shifts.csv')
+	all_staph = get_staph_from_csv('../input/2016-ski-dock.csv')
+	all_shifts = get_shifts_from_csv('../input/2016-ski-dock-shifts.csv')
 	# automate_schedules(all_staph,all_shifts)
 	generate_schedules(all_staph, all_shifts)
