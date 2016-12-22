@@ -21,7 +21,12 @@ class Schedule:
 		for i, day in enumerate(days):
 			print '	', day
 			day = self.get_day_schedule(i)
-			for shift in day:
+			order_shifts = []
+			for time in range(0,24):
+				for shift in day:
+					if shift.start < time and shift not in order_shifts:
+						order_shifts.append(shift)
+			for shift in order_shifts:
 				print ' 		', shift.title, 'from', shift.start, 'to', shift.end
 
 

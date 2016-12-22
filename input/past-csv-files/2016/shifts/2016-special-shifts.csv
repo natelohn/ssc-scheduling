@@ -4,6 +4,7 @@
 0,Wine,17.25,19.5,1
 0,Book:TheCircle,14.75,16.0,1
 0,StoryHour,16.75,18.0,2
+0,SocialHike,17.0,18.0,5
 0,HooHuneNight,19.75,21.25,3
 0,HooHune,20.0,21.25,1
 0,PuppetShow,19.75,21.25,4
@@ -45,10 +46,15 @@
 5,EggDrop,15.75,16.75,2
 5,MusicHour,17.5,19.0,1
 5,OmeletBarChef,6.75,9.5,1
+5,StaphvGuestVball,13.25,16.0,1
+5,StaphvGuestVball,13.5,15.75,1
+5,StaphvGuestVball,14.0,16.0,2
+5,KidsT-Show,14.0,15.0,1
 5,KidsCarnival,15.0,16.0,5
 5,CherryHouse,16.5,17.5,4
 5,BreadBake,15.0,16.0,2
 5,Wine,17.25,19.5,1
+5,ArtSocial,16.5,17.0,3
 5,Shabbat,16.5,17.25,1
 5,MusicHour,18.0,19.0,5
 5,KidsT-ShowWorkshop,13.0,14.0,2
@@ -59,5 +65,3 @@
 6,ParkingODD,14.5,16.0,1
 6,Parking,16.0,17.25,1
 6,Parking,17.25,18.5,1
-5,ArtSocial,16.5,17.0,3
-0,SocialHike,17.0,18.0,5
