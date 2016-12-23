@@ -9,12 +9,13 @@ class Shift:
 
 	id_counter = 1
 
-	def __init__(self,day,title,start,end,shift_type=C.ShiftTypes.GENERAL):
+	def __init__(self,day,title,start,end,shift_category,shift_type):
 		self.day = day
 		self.title = title
 		self.start = start
 		self.end = end 
 		self.covered = False
+		self.shift_category = shift_category
 		self.shift_type = shift_type
 		self.id = Shift.id_counter
 		Shift.id_counter += 1
@@ -36,6 +37,8 @@ class Shift:
 
 		return False
 
+	def is_special(self):
+		return self.shift_category == C.ShiftCategory.SPECIAL
 
 	def __eq__(self, other):
 		"""Overwrite the default == behavior."""

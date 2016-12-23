@@ -19,11 +19,9 @@ class Stapher:
 
 	def free_during_shift(self,new_shift):
 		day_schedule = self.schedule.get_day_schedule(new_shift.day)
-		
 		for shift in day_schedule:
 			if shift.time_overlaps_with(new_shift):
 				return False
-		
 		return True
 
 	def add_shift(self, shift):

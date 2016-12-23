@@ -1,5 +1,5 @@
 import csv, os
-from core import Stapher, Shift, Schedule
+from core import Stapher, Shift, Schedule, constants
 from constraint import Problem, Variable, Domain
 
 
@@ -16,7 +16,7 @@ def get_staph_from_csv_file(file):
 	staph_file.close()
 	return all_staph
 
-def get_shifts_from_csv_files(directory):
+def get_shifts_from_csv_files(directory, shift_category):
 	all_shifts = {}
 	for filename in os.listdir(directory):
 		if filename.endswith('.csv'):
@@ -32,7 +32,7 @@ def get_shifts_from_csv_files(directory):
 				end = float(shift_info[3])
 				ammount = int(shift_info[4])
 				for i in range(0,ammount):
-					shift = Shift(day, title, start, end)
+					shift = Shift(day, title, start, end, shift_category, shift_type)
 					shifts_in_type.append(shift)
 			all_shifts[shift_type] = shifts_in_type
 			shifts_file.close()
@@ -74,16 +74,29 @@ def passes_all_constraints(shift, stapher):
 	"""Add all of the constraints we want to the CSP."""
 	if shift == None or stapher == None:
 		return False
+	elif shift.is_special() and stapher.schedule.total_special_shifts >= 4:
+		return False
 	return stapher.free_during_shift(shift)
 	# TODO: Add more constraints!
+
+
 
 # For testing...
 def print_staph(staph_by_positions):
 	for position in staph_by_positions:
 		print position
 		for stapher in staph_by_positions[position]:
-			print '	', stapher
+			print '	',stapher
+			stapher.schedule.print_info()
 
+def print_uncovered_shifts(shifts):
+	total_uncovered_shifts = 0
+	for shift in shifts:
+		if not shift.covered:
+			total_uncovered_shifts += 1
+			print shift
+	if total_uncovered_shifts > 0:
+		print total_uncovered_shifts ,'LEFT UNCOVERED'
 
 
 if __name__ == "__main__":
@@ -91,14 +104,26 @@ if __name__ == "__main__":
 	test = 'c-and-q'
 	staph_file = '../input/past-csv-files/' + year + '/full-staph.csv'
 	shift_dir = '../input/past-csv-files/' + year + '/shifts'
-	full_staph_shifts = get_shifts_from_csv_files(shift_dir + '/full-staph')
-	general_shifts = get_shifts_from_csv_files(shift_dir + '/general')
-	meal_shifts = get_shifts_from_csv_files(shift_dir + '/meal')
-	off_day_shifts = get_shifts_from_csv_files(shift_dir + '/off-day')
-	programming_shifts = get_shifts_from_csv_files(shift_dir + '/programming')
-	special_shifts = get_shifts_from_csv_files(shift_dir + '/special')
+	special_shifts = get_shifts_from_csv_files(shift_dir + '/special', constants.ShiftCategory.SPECIAL)
+	# full_staph_shifts = get_shifts_from_csv_files(shift_dir + '/full-staph')
+	# general_shifts = get_shifts_from_csv_files(shift_dir + '/general')
+	# meal_shifts = get_shifts_from_csv_files(shift_dir + '/meal')
+	# off_day_shifts = get_shifts_from_csv_files(shift_dir + '/off-day')
+	# programming_shifts = get_shifts_from_csv_files(shift_dir + '/programming')
 	all_staph = get_staph_from_csv_file(staph_file)
 	staph_by_positions = get_staph_by_positions(all_staph)
+
+
+	"""
+	First we schedule the special shifts...
+	For the simple solution we will ignore shift type. 
+	"""
+	# This will change later.
+	special_shift_arr = []
+	for shift_type in special_shifts: 
+		special_shift_arr += special_shifts[shift_type]
+	print len(special_shift_arr) / len(all_staph)
+	DFS_Schedules(all_staph, special_shift_arr)
 
 	"""
 	Here we need to order the shifts to assure that those groups with the smallest number of people in them
@@ -123,9 +148,7 @@ if __name__ == "__main__":
 	# 	else:
 	# 		print 'incomplete schedule for', group_name
 
-	# 	# For printing...
-	# 	for stapher in staph_group:
-	# 		if stapher not in all_staphers:
-	# 			all_staphers.append(stapher)
+
 	print_staph(staph_by_positions)
+	# print_uncovered_shifts(special_shift_arr)
 

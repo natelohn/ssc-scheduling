@@ -124,15 +124,12 @@ class Jobs(Constants):
 	STRINGS[STAPH_D] = "Staph Director"
 
 
-class ShiftTypes(Constants):
+class ShiftCategory(Constants):
 
 	"""Constants for the different types of shifts."""
 
-	GENERAL = 0
-	SKI_DOCK = 1
-	CHICKEN = 2
+	SPECIAL = 0
 
 	STRINGS = {}
-	STRINGS[GENERAL] = "General"
-	STRINGS[SKI_DOCK] = "Ski Dock"
-	STRINGS[CHICKEN] = "Chicken"
+	STRINGS[SPECIAL] = "Special"
+	
