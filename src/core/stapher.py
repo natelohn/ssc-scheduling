@@ -27,6 +27,9 @@ class Stapher:
 	def add_shift(self, shift):
 		self.schedule.add_shift(shift)
 
+	def remove_shift(self, shift):
+		self.schedule.remove_shift(shift)
+		
 	def print_info(self):
 		print str(self)
 

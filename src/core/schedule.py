@@ -8,6 +8,7 @@ class Schedule:
 		self.total_shifts = 0
 		self.special_shifts = {0:[],1:[],2:[],3:[],4:[],5:[],6:[]}
 		self.total_special_shifts = 0
+		self.special_shift_types = []
 
 
 	def get_day_schedule(self,day):
@@ -20,12 +21,22 @@ class Schedule:
 		if shift.is_special():
 			self.special_shifts[shift.day].append(shift)
 			self.total_special_shifts = self.total_special_shifts + 1
+			self.special_shift_types.append(shift.type)
+
+	def remove_shift(self,shift):
+		shift.covered = False
+		self.all_shifts[shift.day].remove(shift)
+		self.total_shifts = self.total_shifts - 1
+		if shift.is_special():
+			self.special_shifts[shift.day].remove(shift)
+			self.total_special_shifts = self.total_special_shifts - 1
+			self.special_shift_types.remove(shift.type)
 
 
 	def print_info(self):
 		days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
 		for i, day in enumerate(days):
-			print '	', day
+			print '		', day
 			shifts = self.get_day_schedule(i)
 			order_shifts = []
 			for time in range(0,24):
@@ -33,4 +44,4 @@ class Schedule:
 					if shift.start < time and shift not in order_shifts:
 						order_shifts.append(shift)
 			for shift in order_shifts:
-				print ' 		',shift.title,'from',shift.start,'to',shift.end
+				print ' 			',shift.title,'from',shift.start,'to',shift.end

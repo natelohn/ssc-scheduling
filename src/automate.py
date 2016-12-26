@@ -52,20 +52,25 @@ def get_staph_by_positions(all_staph):
 				staph_by_positions[position] = [stapher]
 	return staph_by_positions
 
-
-def DFS_Schedules(staph, shifts):
-	if shifts == []:
+def DFS_Schedules(staph, unassigned_shifts):
+	if len(unassigned_shifts) < 4:
+		print 'finding a place for', len(unassigned_shifts), 'shifts w/', len(staph), 'staphers...'
+	if unassigned_shifts == []:
+		print '============MADE IT================'
 		return True
 	else:
-		for shift in shifts:
-			for stapher in staph:
-				if passes_all_constraints(shift, stapher):
-					stapher.add_shift(shift)
-					shifts.remove(shift)
-					return DFS_Schedules(staph, shifts)
-			if shift in shifts:
-				print 'Could not place shift', shift
-				return False
+		shift = unassigned_shifts[0]
+		for stapher in staph:
+			if passes_all_constraints(shift, stapher):
+				stapher.add_shift(shift)
+				unassigned_shifts.remove(shift)
+				if not DFS_Schedules(staph, unassigned_shifts):
+					stapher.remove_shift(shift)
+					unassigned_shifts.append(shift)
+				else:
+					return True
+		if not shift.covered:
+			return False
 		
 
 
@@ -74,29 +79,45 @@ def passes_all_constraints(shift, stapher):
 	"""Add all of the constraints we want to the CSP."""
 	if shift == None or stapher == None:
 		return False
-	elif shift.is_special() and stapher.schedule.total_special_shifts >= 4:
+	if shift.is_special() and fails_special_shift_constraints(shift, stapher):
 		return False
 	return stapher.free_during_shift(shift)
 	# TODO: Add more constraints!
 
+def fails_special_shift_constraints(shift, stapher):
+	# No one can get more the the even number of shifts
+	if stapher.schedule.total_special_shifts >= 4:
+		return True
+	# No one can have 2 of the same type of shift
+	if shift.type in stapher.schedule.special_shift_types:
+		return True
+	else:
+		return False
 
 
 # For testing...
-def print_staph(staph_by_positions):
+def print_staph_by_position(staph_by_positions):
 	for position in staph_by_positions:
 		print position
 		for stapher in staph_by_positions[position]:
 			print '	',stapher
 			stapher.schedule.print_info()
+def print_staph(staph):
+	for stapher in staph:
+		print stapher
+		stapher.schedule.print_info()
 
 def print_uncovered_shifts(shifts):
-	total_uncovered_shifts = 0
+	uncovered = []
 	for shift in shifts:
 		if not shift.covered:
-			total_uncovered_shifts += 1
+			uncovered.append(shift)
+	if len(uncovered) > 0:
+		print '======================='
+		for shift in uncovered:
 			print shift
-	if total_uncovered_shifts > 0:
-		print total_uncovered_shifts ,'LEFT UNCOVERED'
+	print len(uncovered) ,'SHIFTS LEFT UNCOVERED'
+
 
 
 if __name__ == "__main__":
@@ -116,14 +137,26 @@ if __name__ == "__main__":
 
 	"""
 	First we schedule the special shifts...
-	For the simple solution we will ignore shift type. 
+	For the simple solution we will ignore special shift preferences and special shift type. 
 	"""
 	# This will change later.
 	special_shift_arr = []
 	for shift_type in special_shifts: 
 		special_shift_arr += special_shifts[shift_type]
-	print len(special_shift_arr) / len(all_staph)
-	DFS_Schedules(all_staph, special_shift_arr)
+	# DFS_Schedules(all_staph, special_shift_arr)
+
+
+	smaller_staph = all_staph[:len(all_staph) / 5]
+	smaller_shifts = special_shift_arr[:len(special_shift_arr) / 10]
+	if DFS_Schedules(all_staph, special_shift_arr):
+		print_staph(all_staph)
+	else:
+		print 'no solution found'
+	# print_staph(all_staph)
+	# print_uncovered_shifts(smaller_shifts)
+
+
+	
 
 	"""
 	Here we need to order the shifts to assure that those groups with the smallest number of people in them
@@ -149,6 +182,7 @@ if __name__ == "__main__":
 	# 		print 'incomplete schedule for', group_name
 
 
-	print_staph(staph_by_positions)
+	# print_staph_by_position(staph_by_positions)
+	# print_staph(all_staph)
 	# print_uncovered_shifts(special_shift_arr)
 
