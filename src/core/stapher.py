@@ -13,6 +13,7 @@ class Stapher:
 		self.position = position
 		self.alt_positions = alt_positions
 		self.schedule = Schedule()
+		self.special_shift_preferences = []
 		self.id = Stapher.id_counter
 		Stapher.id_counter += 1
 
@@ -32,6 +33,11 @@ class Stapher:
 		
 	def print_info(self):
 		print str(self)
+
+	def clear_schedule(self):
+		for day in self.schedule.all_shifts.keys():
+			for shift in self.schedule.all_shifts[day]:
+				self.remove_shift(shift)
 
 	def __eq__(self, other):
 		"""Override the default == behavior"""

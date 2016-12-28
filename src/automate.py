@@ -1,4 +1,4 @@
-import csv, os
+import csv, os, random
 from core import Stapher, Shift, Schedule, constants
 from constraint import Problem, Variable, Domain
 
@@ -53,10 +53,8 @@ def get_staph_by_positions(all_staph):
 	return staph_by_positions
 
 def DFS_Schedules(staph, unassigned_shifts):
-	if len(unassigned_shifts) < 4:
-		print 'finding a place for', len(unassigned_shifts), 'shifts w/', len(staph), 'staphers...'
+	# print 'finding a place for', len(unassigned_shifts), 'shifts w/', len(staph), 'staphers...'
 	if unassigned_shifts == []:
-		print '============MADE IT================'
 		return True
 	else:
 		shift = unassigned_shifts[0]
@@ -81,7 +79,7 @@ def passes_all_constraints(shift, stapher):
 		return False
 	if shift.is_special() and fails_special_shift_constraints(shift, stapher):
 		return False
-	return stapher.free_during_shift(shift)
+	return stapher.free_during_shift(shift) and not shift.covered
 	# TODO: Add more constraints!
 
 def fails_special_shift_constraints(shift, stapher):
@@ -89,10 +87,33 @@ def fails_special_shift_constraints(shift, stapher):
 	if stapher.schedule.total_special_shifts >= 4:
 		return True
 	# No one can have 2 of the same type of shift
-	if shift.type in stapher.schedule.special_shift_types:
+	elif shift.type in stapher.schedule.special_shift_types:
 		return True
 	else:
 		return False
+
+def schedule_special_shifts(all_staph, special_shifts):
+	max_prefference = len(special_shifts.keys())
+	left_over_shifts = []
+	for shift_type in special_shifts:
+		unassigned_shifts = [] + special_shifts[shift_type]
+		current_prefference = 0
+		while current_prefference < max_prefference and unassigned_shifts != []:
+			for stapher in all_staph:
+				if stapher.special_shift_preferences[current_prefference] == shift_type:
+					for shift in unassigned_shifts:
+						if passes_all_constraints(shift, stapher):
+							stapher.add_shift(shift)
+							unassigned_shifts.remove(shift)
+							break
+			current_prefference += 1
+		left_over_shifts += unassigned_shifts
+	for stapher in all_staph:
+		for shift in left_over_shifts:
+			if passes_all_constraints(shift, stapher):
+				stapher.add_shift(shift)
+				left_over_shifts.remove(shift)
+
 
 
 # For testing...
@@ -105,18 +126,65 @@ def print_staph_by_position(staph_by_positions):
 def print_staph(staph):
 	for stapher in staph:
 		print stapher
+		w = stapher.special_shift_preferences
+		print stapher.name, 'wanted: 1.', w[0], '2.',w[1],'3.',w[2],'4.',w[3],'5.',w[4]
 		stapher.schedule.print_info()
 
 def print_uncovered_shifts(shifts):
+	print '======================='
 	uncovered = []
-	for shift in shifts:
-		if not shift.covered:
-			uncovered.append(shift)
+	for shift_type in shifts:
+		for shift in shifts[shift_type]:
+			if not shift.covered:
+				uncovered.append(shift)
 	if len(uncovered) > 0:
-		print '======================='
 		for shift in uncovered:
 			print shift
 	print len(uncovered) ,'SHIFTS LEFT UNCOVERED'
+
+def generate_rand_preferences(all_staph, special_shifts):
+	special_shift_types = special_shifts.keys()
+	for stapher in all_staph:
+		type_prefferences = []
+		while len(type_prefferences) < len(special_shift_types): # only looks at top 4 choices
+			r = random.randint(0,len(special_shift_types) - 1)
+			if special_shift_types[r] not in type_prefferences:
+				type_prefferences.append(special_shift_types[r])
+		stapher.special_shift_preferences = type_prefferences
+
+def find_special_shift_sucess_rate(all_staph, special_shifts):
+	top_choices = 10
+	total_shifts = 0
+	total_unwanted = 0
+	placed_not_top_choice = 0
+	uncovered_shifts = 0
+	trials = 1000
+	for i in range(0,trials):
+		for stapher in all_staph:
+			stapher.clear_schedule()
+		generate_rand_preferences(all_staph, special_shifts)
+		schedule_special_shifts(all_staph, special_shifts)
+		not_top_choice = 0
+		for stapher in all_staph:
+			for day in stapher.schedule.all_shifts.keys():
+				for shift in stapher.schedule.all_shifts[day]:
+					total_shifts += 1
+					if shift.type not in stapher.special_shift_preferences[:top_choices]:
+						not_top_choice += 1
+						total_unwanted += 1
+		if not_top_choice > 0:
+			placed_not_top_choice += 1
+		not_covered = 0
+		for s_type in special_shifts:
+			for shift in special_shifts[s_type]:
+				if not shift.covered:
+					not_covered += 1
+		if not_covered > 0:
+			uncovered_shifts += 1
+	sucess_rate = (float(total_unwanted)/total_shifts) * 100
+	print  sucess_rate, '% of shifts placed were not ranked in top', top_choices
+	print placed_not_top_choice,'/', trials,' trials, shifts include scheduled special shifts not in top', top_choices,'choices'
+	print uncovered_shifts,'/', trials,' trials, has special shifts not scheduled'
 
 
 
@@ -137,21 +205,17 @@ if __name__ == "__main__":
 
 	"""
 	First we schedule the special shifts...
-	For the simple solution we will ignore special shift preferences and special shift type. 
+	The current algorithm gives staphers a 70% chance of getting all shifts in their top 5,
+	 an 87% chance of getting all shifts in their top 10, and a 95% chance of getting all in their top 15
 	"""
-	# This will change later.
-	special_shift_arr = []
-	for shift_type in special_shifts: 
-		special_shift_arr += special_shifts[shift_type]
-	# DFS_Schedules(all_staph, special_shift_arr)
+	generate_rand_preferences(all_staph, special_shifts) #These shifts will be manually input during actual schedule building.
+	schedule_special_shifts(all_staph, special_shifts)
 
-
-	smaller_staph = all_staph[:len(all_staph) / 5]
-	smaller_shifts = special_shift_arr[:len(special_shift_arr) / 10]
-	if DFS_Schedules(all_staph, special_shift_arr):
-		print_staph(all_staph)
-	else:
-		print 'no solution found'
+	# special shift prefferences will be added manually later, but this will have to work for now...
+	# This portion will not be in the final code
+	# generate_rand_preferences(all_staph, special_shifts)
+	# DFS_Schedules(all_staph, special_shifts_arr)
+	# schedule_special_shifts(all_staph, special_shifts)
 	# print_staph(all_staph)
 	# print_uncovered_shifts(smaller_shifts)
 
@@ -183,6 +247,7 @@ if __name__ == "__main__":
 
 
 	# print_staph_by_position(staph_by_positions)
-	# print_staph(all_staph)
-	# print_uncovered_shifts(special_shift_arr)
+	print_staph(all_staph)
+	print_uncovered_shifts(special_shifts)
+	# find_special_shift_sucess_rate(all_staph, special_shifts)
 
