@@ -6,9 +6,10 @@ class Schedule:
 	def __init__(self):
 		self.all_shifts = {0:[],1:[],2:[],3:[],4:[],5:[],6:[]}
 		self.total_shifts = 0
-		self.special_shifts = {0:[],1:[],2:[],3:[],4:[],5:[],6:[]}
 		self.total_special_shifts = 0
 		self.special_shift_types = []
+		self.off_shifts = []
+		self.programming_hours = 0
 
 
 	def get_day_schedule(self,day):
@@ -19,18 +20,24 @@ class Schedule:
 		self.all_shifts[shift.day].append(shift)
 		self.total_shifts = self.total_shifts + 1
 		if shift.is_special():
-			self.special_shifts[shift.day].append(shift)
 			self.total_special_shifts = self.total_special_shifts + 1
 			self.special_shift_types.append(shift.type)
+		if shift.is_off_day():
+			self.off_shifts.append(shift)
+		if shift.is_programming():
+			self.programming_hours += shift.length
 
 	def remove_shift(self,shift):
 		shift.covered = False
 		self.all_shifts[shift.day].remove(shift)
 		self.total_shifts = self.total_shifts - 1
 		if shift.is_special():
-			self.special_shifts[shift.day].remove(shift)
 			self.total_special_shifts = self.total_special_shifts - 1
 			self.special_shift_types.remove(shift.type)
+		if shift.is_off_day():
+			self.off_shifts.remove(shift)
+		if shift.is_programming():
+			self.programming_hours -= shift.length
 
 
 	def print_info(self):

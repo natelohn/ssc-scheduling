@@ -14,6 +14,7 @@ class Shift:
 		self.title = title
 		self.start = start
 		self.end = end 
+		self.length = end - start
 		self.covered = False
 		self.category = category
 		self.type = s_type
@@ -24,21 +25,48 @@ class Shift:
 		# If the shifts are on different days, no overlap
 		if self.day != other.day:
 			return False
+		return self.time_overlaps(other.start, other.end)
 
+	def time_overlaps(self, start, end):
 		# If shifts start at the same time, then they overlap
-		if self.start == other.start:
+		if self.start == start:
 			return True
 		# If self starts earlier, they overlap if other's start is before self's end
-		elif self.start < other.start:
-			return other.start < self.end
+		elif self.start < start:
+			return start < self.end
 		# If self starts later, they overlap if self's start is before other's end
 		else:
-			return self.start < other.end
+			return self.start < end
 
 		return False
 
 	def is_special(self):
 		return self.category == C.ShiftCategory.SPECIAL
+
+	def is_off_day(self):
+		return self.category == C.ShiftCategory.OFF_DAY
+	
+	def is_kids_programming(self):
+		return self.category == C.ShiftCategory.KIDS_PROGRAMMING
+
+	def is_ii_programming(self):
+		return self.category == C.ShiftCategory.II_PROGRAMMING
+
+	def is_chicken_programming(self):
+		return self.category == C.ShiftCategory.CHICKEN	
+
+	def is_programming(self):
+		if self.is_kids_programming():
+			return True
+		if self.is_ii_programming():
+			return True
+		if self.is_chicken_programming():
+			return True
+		# if self.category == C.ShiftCategory.SKI_DOCK:
+		# 	return True
+		return False
+
+
 
 	def __eq__(self, other):
 		"""Overwrite the default == behavior."""

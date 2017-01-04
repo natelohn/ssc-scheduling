@@ -8,20 +8,28 @@ class Stapher:
 
 	id_counter = 1
 
-	def __init__(self,name,position,alt_positions):
+	def __init__(self,name,positions):
 		self.name = name
-		self.position = position
-		self.alt_positions = alt_positions
+		self.positions = positions
 		self.schedule = Schedule()
 		self.special_shift_preferences = []
+		self.restricted_off_days = []
 		self.id = Stapher.id_counter
 		Stapher.id_counter += 1
 
+	def total_shifts(self):
+		return self.schedule.total_shifts
+
+	def programming_hours(self):
+		return self.schedule.programming_hours
 
 	def free_during_shift(self,new_shift):
-		day_schedule = self.schedule.get_day_schedule(new_shift.day)
+		return self.free_during_time(new_shift.day, new_shift.start, new_shift.end)
+
+	def free_during_time(self, day, start, end):
+		day_schedule = self.schedule.get_day_schedule(day)
 		for shift in day_schedule:
-			if shift.time_overlaps_with(new_shift):
+			if shift.time_overlaps(start, end):
 				return False
 		return True
 
@@ -39,6 +47,29 @@ class Stapher:
 			for shift in self.schedule.all_shifts[day]:
 				self.remove_shift(shift)
 
+	def clear_shifts_of_category(self,category):
+		for day in self.schedule.all_shifts.keys():
+			for shift in self.schedule.all_shifts[day]:
+				if shift.category == category:
+					self.remove_shift(shift)
+
+	def reached_programming_limit(self, shift_length, constraint_info):
+		max_programming_hours = 0 - shift_length
+		for position in self.positions:
+			max_programming_hours += constraint_info['max_programming_hours'][position]
+		return self.schedule.programming_hours >= max_programming_hours
+
+
+	# Not the best solution, but a quick way to implement without using python time objects
+	def off_day_scheduled(self):
+		return len(self.schedule.off_shifts) == 2
+
+	def same_off_day(self, off_shift):
+		for shift in self.schedule.off_shifts:
+			if shift.type != off_shift.type:
+				return False
+		return True
+
 	def __eq__(self, other):
 		"""Override the default == behavior"""
 		if type(other) is type(self):
@@ -51,8 +82,10 @@ class Stapher:
 			return not self.__eq__(other)
 
 	def __str__(self):
-		return (self.name + " works " + self.position + " and has " + 
-			str(self.schedule.total_shifts) + " total shifts.")
+		extra_pos = ''
+		for pos in self.positions[1:]:
+			extra_pos += ', ' + pos
+		return ('NAME: '+ self.name + ", JOB(S): " + self.positions[0] + extra_pos)
 
 	def __repr__(self):
 		return str(self)
