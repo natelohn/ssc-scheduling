@@ -321,37 +321,38 @@ if __name__ == "__main__":
 	year = '2016'
 	staph_file = '../input/past-csv-files/' + year + '/full-staph.csv'
 	shift_dir = '../input/past-csv-files/' + year + '/shifts'
-	special_shifts = get_shifts_from_csv_files(shift_dir + '/special', constants.ShiftCategory.SPECIAL)
-	kids_shifts = get_shifts_from_csv_files(shift_dir + '/kids-programming', constants.ShiftCategory.KIDS_PROGRAMMING)
-	ii_shifts = get_shifts_from_csv_files(shift_dir + '/ii-programming', constants.ShiftCategory.II_PROGRAMMING)
-	chicken_shifts = get_shifts_from_csv_files(shift_dir + '/chicken', constants.ShiftCategory.CHICKEN)
-	off_shifts = get_shifts_from_csv_files(shift_dir + '/off-day', constants.ShiftCategory.OFF_DAY)
+	special_shifts = get_shifts_from_csv_files(shift_dir + '/special')
+	programming_shifts = get_shifts_from_csv_files(shift_dir + '/programming')
+	# chicken_shifts = get_shifts_from_csv_files(shift_dir + '/chicken', constants.ShiftCategory.CHICKEN)
+	# off_shifts = get_shifts_from_csv_files(shift_dir + '/off-day', constants.ShiftCategory.OFF_DAY)
 	# full_staph_shifts = get_shifts_from_csv_files(shift_dir + '/full-staph')
 	# general_shifts = get_shifts_from_csv_files(shift_dir + '/general')
 	# meal_shifts = get_shifts_from_csv_files(shift_dir + '/meal')
 	all_staph = get_staph_from_csv_file(staph_file)
 	staph_by_positions = get_staph_by_positions(all_staph)
 
+	print programming_shifts
+
 
 	'''
 	First we gather all the information we will need while placing shifts...
 	'''
-	constraint_info = {}
-	constraint_info['number_of_staphers'] = len(all_staph)
-	constraint_info['max_special_shifts'] = (len(arr_from_dict(special_shifts)) / len(all_staph)) + 1
-	group_shifts = [kids_shifts, ii_shifts, chicken_shifts] # Need to add other groups
-	programming_max_variances = [3,1,0]
-	constraint_info['max_programming_hours'] = max_programming_hours_by_group(group_shifts, staph_by_positions, programming_max_variances)
-	constraint_info['max_programming_hours']['manager'] = 0 # Not sure where to put the manager shift file yet
-	constraint_info['max_programming_hours']['ski-dock'] = 0
+	# constraint_info = {}
+	# constraint_info['number_of_staphers'] = len(all_staph)
+	# constraint_info['max_special_shifts'] = (len(arr_from_dict(special_shifts)) / len(all_staph)) + 1
+	# group_shifts = [kids_shifts, ii_shifts, chicken_shifts] # Need to add other groups
+	# programming_max_variances = [3,1,0]
+	# constraint_info['max_programming_hours'] = max_programming_hours_by_group(group_shifts, staph_by_positions, programming_max_variances)
+	# constraint_info['max_programming_hours']['manager'] = 0 # Not sure where to put the manager shift file yet
+	# constraint_info['max_programming_hours']['ski-dock'] = 0
 	# print constraint_info['max_programming_hours']
 
 	"""
 	Next we will place all programming shifts...
 	"""
 
-	schedule_programming_shifts(staph_by_positions, ii_shifts, constraint_info)
-	schedule_programming_shifts(staph_by_positions, kids_shifts, constraint_info)
+	# schedule_programming_shifts(staph_by_positions, ii_shifts, constraint_info)
+	# schedule_programming_shifts(staph_by_positions, kids_shifts, constraint_info)
 	# schedule_programming_shifts(staph_by_positions, chicken_shifts, constraint_info)
 	
 
