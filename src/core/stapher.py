@@ -53,7 +53,7 @@ class Stapher:
 				if shift.category == category:
 					self.remove_shift(shift)
 
-	def reached_programming_limit(self, shift_length, constraint_info):
+	def reached_programming_limit_week(self, shift_length, constraint_info):
 		max_programming_hours = 0 - shift_length
 		for position in self.positions:
 			max_programming_hours += constraint_info['max_programming_hours'][position]

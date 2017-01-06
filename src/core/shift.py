@@ -9,7 +9,7 @@ class Shift:
 
 	id_counter = 1
 
-	def __init__(self,day,title,start,end,category,s_type):
+	def __init__(self,day,title,start,end,category,eligible_workers,s_type):
 		self.day = day
 		self.title = title
 		self.start = start
@@ -17,6 +17,7 @@ class Shift:
 		self.length = end - start
 		self.covered = False
 		self.category = category
+		self.eligible_workers = eligible_workers
 		self.type = s_type
 		self.id = Shift.id_counter
 		Shift.id_counter += 1
@@ -41,30 +42,16 @@ class Shift:
 		return False
 
 	def is_special(self):
-		return self.category == C.ShiftCategory.SPECIAL
+		return self.category == 'special'
 
 	def is_off_day(self):
-		return self.category == C.ShiftCategory.OFF_DAY
+		return self.category == 'off-day'
 	
-	def is_kids_programming(self):
-		return self.category == C.ShiftCategory.KIDS_PROGRAMMING
-
-	def is_ii_programming(self):
-		return self.category == C.ShiftCategory.II_PROGRAMMING
-
-	def is_chicken_programming(self):
-		return self.category == C.ShiftCategory.CHICKEN	
-
 	def is_programming(self):
-		if self.is_kids_programming():
-			return True
-		if self.is_ii_programming():
-			return True
-		if self.is_chicken_programming():
-			return True
-		# if self.category == C.ShiftCategory.SKI_DOCK:
-		# 	return True
-		return False
+		return self.category == 'programming'
+
+	def is_ski_dock(self):
+		return self.eligible_workers == 'ski-dock'
 
 
 
