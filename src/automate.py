@@ -191,8 +191,10 @@ def fails_programming_shift_constraints(shift, stapher, constraint_info):
 		return False
 	if shift.eligible_workers not in stapher.positions:
 		return True
-	# Max programming hours
-	if stapher.reached_programming_limit_week(shift.length, constraint_info):
+	# Max programming hoursreached_programming_limit_week
+	if stapher.reached_programming_limit_day(shift, constraint_info):
+		return True
+	if stapher.reached_programming_limit_week(shift, constraint_info):
 		return True
 	if fails_ski_dock_constraints(shift, stapher, constraint_info):
 		return True
@@ -238,16 +240,31 @@ def add_off_day_restrictions(staph_by_positions, programming_shifts):
 					if shift.day not in stapher.restricted_off_days:
 						stapher.restricted_off_days.append(shift.day)
 
-def max_programming_hours_by_group(staph, shifts):
+def avg_programming_hours_by_group(staph, shifts, constraint_info):
 	programming_groups = shifts['programming']
 	average_programming_hours_by_group = {}
-	variance = 3 # need to make this specific to each group
+	average_weekly_programming_hours = {}
+	average_daily_programming_hours = {}
+	programming_days = constraint_info['programming_days']
+	week_variance = constraint_info['programing_limit_varience_week']
+	day_variance = constraint_info['programing_limit_varience_day']
 	for group in programming_groups:
 		total_programming_hours = 0
 		for shift_type in shifts[group]:
 			for shift in shifts[shift_type]:
 				total_programming_hours += shift.length
-		average_programming_hours_by_group[group] = (total_programming_hours / len(staph[group])) + variance
+				if shift.day in total_programming_hours_by_day:
+					total_programming_hours_by_day[shift.day] += shift.length
+				else:
+					total_programming_hours_by_day[shift.day] = shift.length
+		average_weekly_programming_hours[group] = (total_programming_hours / len(staph[group])) + week_variance
+		average_daily_programming_hours[group] = ((total_programming_hours / len(staph[group])) / programming_days)  + day_variance
+	average_programming_hours_by_group['week'] = average_weekly_programming_hours
+	average_programming_hours_by_group['day'] = average_daily_programming_hours
+	for key in average_programming_hours_by_group:
+		print key
+		for key_2 in average_programming_hours_by_group[key]:
+			print '	',key_2, average_programming_hours_by_group[key][key_2]
 	return average_programming_hours_by_group
 
 
@@ -268,8 +285,10 @@ def print_staph(staph, constraint_info):
 		# print stapher.name, 'wanted: 1.', w[0], '2.',w[1],'3.',w[2],'4.',w[3],'5.',w[4]
 		max_programming_hours = 0
 		for pos in stapher.positions:
-			max_programming_hours += constraint_info['max_programming_hours'][pos]
+			max_programming_hours += constraint_info['max_programming_hours']['week'][pos]
+			max_daily_programming_hours += constraint_info['max_programming_hours']['day'][pos]
 		print 'MAX PROGRAMMING HOURS:', max_programming_hours
+		print 'MAX DAILY PROGRAMMING:', max_daily_programming_hours
 		print stapher.total_shifts(),'shifts,',stapher.programming_hours(),'programming hours.'
 		stapher.schedule.print_info()
 
@@ -363,12 +382,15 @@ if __name__ == "__main__":
 	constraint_info['number_of_staphers'] = len(staph['all-staph'])
 	constraint_info['max_special_shifts'] = (len(shifts['all-special-shifts']) / len(staph['all-staph'])) + 1
 	constraint_info['number_special_shift_types'] = len(shifts['special']['staph'])
-	constraint_info['max_programming_hours'] = max_programming_hours_by_group(staph, shifts)
-	# print constraint_info
+	constraint_info['programming_days'] = 5 # need to make this specific to each group
+	constraint_info['programing_limit_varience_week'] = 3 # need to make this specific to each group
+	constraint_info['programing_limit_varience_day'] = 7 # need to make this specific to each group
+	constraint_info['max_programming_hours'] = avg_programming_hours_by_group(staph, shifts, constraint_info)
 
 	"""
 	Next we will place all programming shifts...
 	"""
+
 	schedule_programming_shifts(staph, shifts, constraint_info)
 	
 
@@ -378,7 +400,7 @@ if __name__ == "__main__":
 	 an 87% chance of getting all shifts in their top 10, and a 95% chance of getting all in their top 15.
 	 But,only whenever special shifts are placed before anything else!
 	 """
-	generate_rand_preferences(staph, shifts) #These preferences will be manually input during actual schedule building.
+	# generate_rand_preferences(staph, shifts) #These preferences will be manually input during actual schedule building.
 	# schedule_special_shifts(staph, shifts, constraint_info)
 
 

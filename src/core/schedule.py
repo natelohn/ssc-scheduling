@@ -39,6 +39,12 @@ class Schedule:
 		if shift.is_programming():
 			self.programming_hours -= shift.length
 
+	def programming_hours_in_day(self, day):
+		programming_hours = 0
+		for shift in self.get_day_schedule(day):
+			if shift.is_programming():
+				programming_hours += shift.length
+		return programming_hours
 
 	def print_info(self):
 		days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']

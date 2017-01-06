@@ -53,12 +53,17 @@ class Stapher:
 				if shift.category == category:
 					self.remove_shift(shift)
 
-	def reached_programming_limit_week(self, shift_length, constraint_info):
-		max_programming_hours = 0 - shift_length
+	def reached_programming_limit_week(self, shift, constraint_info):
+		max_hours = 0 - shift.length
 		for position in self.positions:
-			max_programming_hours += constraint_info['max_programming_hours'][position]
-		return self.schedule.programming_hours >= max_programming_hours
+			max_hours += constraint_info['max_programming_hours']['week'][position]
+		return self.schedule.programming_hours >= max_hours
 
+	def reached_programming_limit_day(self, shift, constraint_info):
+		max_hours = 0 - shift.length
+		for position in self.positions:
+			max_hours += constraint_info['max_programming_hours']['day'][position]
+		return self.schedule.programming_hours_in_day(shift.day) >= max_hours
 
 	# Not the best solution, but a quick way to implement without using python time objects
 	def off_day_scheduled(self):
