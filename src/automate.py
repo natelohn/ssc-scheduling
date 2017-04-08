@@ -10,8 +10,9 @@ def get_staph_from_csv_file(file):
 	staph['all-staph'] = []
 	for staph_info in csv_staph_file:
 		name = staph_info[0]
-		positions = staph_info[1:]
-		stapher = Stapher(name,positions)
+		gender = staph_info[1]
+		positions = staph_info[2:]
+		stapher = Stapher(name,gender,positions)
 		staph['all-staph'].append(stapher)
 		for position in positions:
 			if position in staph:
@@ -67,6 +68,129 @@ def get_shifts(directory):
 						shifts[worker_group] = types_for_worker_group
 	return shifts
 
+# This is a method to see which days position groups can not take off. (i.e. Ski Dock can't be TueWay)
+def get_off_day_restrictions(staph, shifts):
+	restricted_off_days = {}
+	for position in shifts['programming']:
+		programming = 'all-' + position + '-shifts'
+		ammount_of_shifts_at_a_given_time = {}
+		for shift in shifts[programming]:
+			time_key = str(shift.day) + ' ' + str(shift.start) + '-' +  str(shift.end) # Does not account for overlapping times
+			if time_key in ammount_of_shifts_at_a_given_time:
+				ammount_of_shifts_at_a_given_time[time_key] += 1
+			else:
+				ammount_of_shifts_at_a_given_time[time_key] = 1
+			if len(staph[position]) - ammount_of_shifts_at_a_given_time[time_key] == 0:
+				if position in restricted_off_days:
+					restricted_off_days[position].add(shift.day)
+				else:
+					restricted_off_days[position] = set([shift.day])
+				if shift.start >= 16:
+					restricted_off_days[position].add(shift.day + 1)
+	return restricted_off_days
+
+def is_not_smallest_off_day_group(off_day, off_day_groups):
+	if off_day not in off_day_groups:
+		return False
+	else:
+		for day in off_day_groups:
+			if len(off_day_groups[day]) < len(off_day_groups[off_day]):
+				return True
+		return False
+
+
+def passes_off_day_restrictions(stapher, off_day, off_day_groups, off_day_restrictions):
+	if is_not_smallest_off_day_group(off_day, off_day_groups):
+		return False
+	for position in stapher.positions:
+		if position in off_day_restrictions:
+			if off_day in off_day_restrictions[position]:
+				return False
+	return True
+
+def get_off_days_score(off_day_groups):
+	scores = {}
+	total_score = 0
+	for group in off_day_groups:
+		count_of_positions = {}
+		count_of_gender = {}
+		position_overlap = 0
+		for stapher in off_day_groups[group]:
+			if stapher.gender in count_of_gender:
+				count_of_gender[stapher.gender] += 1
+			else:
+				count_of_gender[stapher.gender] = 1
+			for position in stapher.positions:
+				if position in count_of_positions:
+					count_of_positions[position] += 1
+					position_overlap += 1
+				else:
+					count_of_positions[position] = 1
+		if 'male' not in count_of_gender:
+			return 100
+		if count_of_gender['female'] > count_of_gender['male']:
+			majority_gender = 'female'
+		else:
+			majority_gender = 'male'
+		gender_balence = count_of_gender[majority_gender] - (len(off_day_groups[group]) - count_of_gender[majority_gender])
+		group_score = position_overlap + gender_balence
+		total_score += group_score
+	return total_score
+
+			
+
+
+def schedule_off_days(staph, off_day_restrictions):
+	lowest_scores = [100, 100, 100, 100, 100]
+	best_groups = []
+	for i in range(0,10000):
+		staph_to_be_chosen = list(staph['all-staph'])
+		off_day_groups = {}
+		tries = 0
+		while len(staph_to_be_chosen) > 0:
+			stapher = staph_to_be_chosen[random.randint(0, len(staph_to_be_chosen) - 1)]
+			off_day = random.randint(1,5)
+			if tries > 1000:
+				staph_to_be_chosen = list(staph['all-staph'])
+				off_day_groups = {}
+				tries = 0
+			if passes_off_day_restrictions(stapher, off_day, off_day_groups, off_day_restrictions):
+				if off_day in off_day_groups:
+					off_day_groups[off_day].append(stapher)
+				else:
+					off_day_groups[off_day] = [stapher]
+				staph_to_be_chosen.remove(stapher)
+			tries += 1
+		off_days_score = get_off_days_score(off_day_groups)
+		for low_score in lowest_scores:
+			if off_days_score < low_score:
+				print lowest_scores, off_days_score
+				lowest_scores.remove(low_score)
+				lowest_scores.append(off_days_score)
+				break
+	print lowest_scores
+
+	# Print what happens
+	# names = ['SatSu','SuMo','MoTue','TueWay','WeThur','StirFry','FriSat']
+	# for day in off_day_groups:
+	# 	print names[day], len(off_day_groups[day])
+	# 	for name in off_day_groups[day]:
+	# 		print '	', name
+	# staph_placed = 0
+	# for stapher in staph['all-staph']:
+	# 	stapher_placed = False
+	# 	for day in off_day_groups:
+	# 		if stapher.name in off_day_groups[day]:
+	# 			stapher_placed = True
+	# 			staph_placed += 1
+	# 			print stapher.name, 'is in', names[day]
+	# 	if not stapher_placed:
+	# 		print stapher.name, 'not in off day :('
+	# print staph_placed, 'staphers have off days!'
+
+
+
+
 
 def schedule_special_shifts(staph, shifts, constraint_info):
 	max_prefference = constraint_info['number_special_shift_types']
@@ -84,6 +208,7 @@ def schedule_special_shifts(staph, shifts, constraint_info):
 							break
 			current_prefference += 1
 
+
 def schedule_programming_shifts(staph, shifts, constraint_info):
 	"""
 	Here we need to order the shifts to assure that those groups with the smallest number of people in them
@@ -100,49 +225,29 @@ def schedule_programming_shifts(staph, shifts, constraint_info):
 	# """
 	# Now we build the schedules step by step...
 	# """
+	success = 0
+	total = 0
 	for group in ordered_groups:
 		staphers = staph[group]
-		print '\n\n\nGROUP:', group
+		print '\n\nGROUP:', group, ',',len(staphers),'stapher(s).'
 		for shift_type in shifts[group]:
-			print '	',shift_type
 			programming_shifts = shifts[shift_type]
-			print '	',len(staphers), 'staphers,', len(programming_shifts), 'shifts.'
-			print '	Starting DFS search...'
-			if DFS_Schedules(staphers, programming_shifts, constraint_info):
-				print '	... SUCESS!'
+			print '	TYPE:',shift_type, '-', len(programming_shifts),'shifts.'
+			total += 1
+			print '	Starting search...'
+			if bfs_schedules(staphers,programming_shifts,constraint_info):
+				print '	... SUCCESS!!\n'
+				success += 1
 			else:
-				print '	... FAILURE :('
-			print '======================='
+				print '	... FAILURE :(\n'
+			print '=============================='
+			print 'Placed', success, '/', total, 'shift types.'	
+
+
 
 # Takes in an array of shifts and an array of workers
-# and places them given they pass the constraint
-def DFS_Schedules(staph, unassigned_shifts, constraint_info):
-	# indent = ''
-	# for i in range(0,len(unassigned_shifts)):
-	# 	indent += '=='
-	# print indent,len(unassigned_shifts), 'shifts left...'
-	if unassigned_shifts == []:
-		return True
-	else:
-		shift = unassigned_shifts[0]
-		for stapher in staph:
-			if passes_all_constraints(shift, stapher, constraint_info):
-				stapher.add_shift(shift)
-				unassigned_shifts.remove(shift)
-				if not DFS_Schedules(staph, unassigned_shifts, constraint_info):
-					stapher.remove_shift(shift)
-					unassigned_shifts.append(shift)
-				else:
-					return True
-		if not shift.covered:
-			return False
-
-# FAILS TOO SOON!!!
-def BFS_Schedules(staph, unassigned_shifts, constraint_info):
-	# indent = ''
-	# for i in range(0,len(unassigned_shifts)):
-	# 	indent += '--'
-	# print indent,len(unassigned_shifts), 'shifts left...'
+# and places them given they pass all constraints
+def dfs_schedules(staph, unassigned_shifts, constraint_info):
 	if unassigned_shifts == []:
 		return True
 	shift = unassigned_shifts[0]
@@ -150,13 +255,32 @@ def BFS_Schedules(staph, unassigned_shifts, constraint_info):
 		if passes_all_constraints(shift, stapher, constraint_info):
 			stapher.add_shift(shift)
 			unassigned_shifts.remove(shift)
-			if not BFS_Schedules(staph, unassigned_shifts, constraint_info):
+			if not bfs_schedules(staph, unassigned_shifts, constraint_info):
 				stapher.remove_shift(shift)
 				unassigned_shifts.append(shift)
 			else:
 				return True
-		else:
-			return False
+	if not shift.covered:
+		return False
+
+
+def bfs_schedules(staph, unassigned_shifts, constraint_info):
+	if unassigned_shifts == []:
+		return True
+	shift = unassigned_shifts[len(unassigned_shifts) - 1]
+	for stapher in staph:
+		if passes_all_constraints(shift, stapher, constraint_info):
+			stapher.add_shift(shift)
+			unassigned_shifts.remove(shift)
+			if not dfs_schedules(staph, unassigned_shifts, constraint_info):
+				stapher.remove_shift(shift)
+				unassigned_shifts.append(shift)
+			else:
+				return True
+	if not shift.covered:
+		return False
+
+
 
 
 def passes_all_constraints(shift, stapher, constraint_info):
@@ -191,16 +315,17 @@ def fails_programming_shift_constraints(shift, stapher, constraint_info):
 		return False
 	if shift.eligible_workers not in stapher.positions:
 		return True
-	# Max programming hoursreached_programming_limit_week
-	if stapher.reached_programming_limit_day(shift, constraint_info):
-		return True
-	if stapher.reached_programming_limit_week(shift, constraint_info):
-		return True
-	if fails_ski_dock_constraints(shift, stapher, constraint_info):
-		return True
+	# Max programming hours
+	# if stapher.reached_programming_limit_type(shift, constraint_info):
+	# 	return True
+	# if stapher.reached_programming_limit_week(shift, constraint_info):
+	# 	return True
+	# if fails_ski_dock_constraints(shift, stapher, constraint_info):
+	# 	return True
 	return False
 
 def fails_special_shift_constraints(shift, stapher, constraint_info):
+	return False
 	if not shift.is_special():
 		return False
 	# No one can get more the the even number of shifts
@@ -226,48 +351,47 @@ def fails_off_shift_constraints(shift, stapher, constraint_info):
 
 
 
-def add_off_day_restrictions(staph_by_positions, programming_shifts):
-	ammout_workers_needed = {}
-	for position in programming_shifts:
-		staphers_in_position = staph_by_positions[position]
-		for shift in programming_shifts[position]:
-			if shift.day in ammout_workers_needed and shift.start in ammout_workers_needed[shift.day]:
-				ammout_workers_needed[shift.day][shift.start] += 1
-			else:
-				ammout_workers_needed[shift.day] = {shift.start:1}
-			if not ammout_workers_needed[shift.day][shift.start] < len(staphers_in_position):
-				for stapher in staphers_in_position:
-					if shift.day not in stapher.restricted_off_days:
-						stapher.restricted_off_days.append(shift.day)
-
-def avg_programming_hours_by_group(staph, shifts, constraint_info):
+def avg_weekly_programming_hours_by_group(staph, shifts, constraint_info):
 	programming_groups = shifts['programming']
-	average_programming_hours_by_group = {}
 	average_weekly_programming_hours = {}
-	average_daily_programming_hours = {}
-	programming_days = constraint_info['programming_days']
-	week_variance = constraint_info['programing_limit_varience_week']
-	day_variance = constraint_info['programing_limit_varience_day']
+	variance = constraint_info['programing_limit_varience']
 	for group in programming_groups:
 		total_programming_hours = 0
 		for shift_type in shifts[group]:
 			for shift in shifts[shift_type]:
 				total_programming_hours += shift.length
-				if shift.day in total_programming_hours_by_day:
-					total_programming_hours_by_day[shift.day] += shift.length
+		average_weekly_programming_hours[group] = (total_programming_hours / len(staph[group])) + variance
+	return average_weekly_programming_hours
+
+
+def limits_by_type_and_day(staph, shifts):
+	limits = {}
+	programming_groups = shifts['programming']
+	for group in programming_groups:
+		for shift_type in shifts[group]:
+			total_shifts_of_type_by_day = {0:0, 1:0, 2:0, 3:0, 4:0, 5:0, 6:0}
+			longest_shift_of_type_by_day = {0:0, 1:0, 2:0, 3:0, 4:0, 5:0, 6:0}
+			shortest_shift_of_type_by_day = {0:24, 1:24, 2:24, 3:24, 4:24, 5:24, 6:24}
+			total_shift_hours_by_day = {0:0, 1:0, 2:0, 3:0, 4:0, 5:0, 6:0}
+			for shift in shifts[shift_type]:
+				total_shifts_of_type_by_day[shift.day] += 1
+				total_shift_hours_by_day[shift.day] += shift.length
+				if shift.length > longest_shift_of_type_by_day[shift.day]:
+					longest_shift_of_type_by_day[shift.day] = shift.length
+				if shift.length < shortest_shift_of_type_by_day[shift.day]:
+					shortest_shift_of_type_by_day[shift.day] = shift.length
+			limit_of_type_by_day = {0:0, 1:0, 2:0, 3:0, 4:0, 5:0, 6:0}
+			for day in limit_of_type_by_day:
+				if  total_shifts_of_type_by_day[day]:
+					average_shift_length = total_shift_hours_by_day[day] / total_shifts_of_type_by_day[day]
+				if total_shifts_of_type_by_day[day] < len(staph[group]):
+					limit = average_shift_length
 				else:
-					total_programming_hours_by_day[shift.day] = shift.length
-		average_weekly_programming_hours[group] = (total_programming_hours / len(staph[group])) + week_variance
-		average_daily_programming_hours[group] = ((total_programming_hours / len(staph[group])) / programming_days)  + day_variance
-	average_programming_hours_by_group['week'] = average_weekly_programming_hours
-	average_programming_hours_by_group['day'] = average_daily_programming_hours
-	for key in average_programming_hours_by_group:
-		print key
-		for key_2 in average_programming_hours_by_group[key]:
-			print '	',key_2, average_programming_hours_by_group[key][key_2]
-	return average_programming_hours_by_group
-
-
+					limit = (total_shifts_of_type_by_day[day] / len(staph[group])) * shortest_shift_of_type_by_day[day]
+				limit_of_type_by_day[day] = limit
+			limits[shift_type] = limit_of_type_by_day
+	return limits
+			
 
 
 # For testing...
@@ -285,10 +409,8 @@ def print_staph(staph, constraint_info):
 		# print stapher.name, 'wanted: 1.', w[0], '2.',w[1],'3.',w[2],'4.',w[3],'5.',w[4]
 		max_programming_hours = 0
 		for pos in stapher.positions:
-			max_programming_hours += constraint_info['max_programming_hours']['week'][pos]
-			max_daily_programming_hours += constraint_info['max_programming_hours']['day'][pos]
+			max_programming_hours += constraint_info['max_programming_hours'][pos]
 		print 'MAX PROGRAMMING HOURS:', max_programming_hours
-		print 'MAX DAILY PROGRAMMING:', max_daily_programming_hours
 		print stapher.total_shifts(),'shifts,',stapher.programming_hours(),'programming hours.'
 		stapher.schedule.print_info()
 
@@ -378,20 +500,17 @@ if __name__ == "__main__":
 	'''
 	First we gather all the information we will need while placing shifts...
 	'''
-	constraint_info = {}
-	constraint_info['number_of_staphers'] = len(staph['all-staph'])
-	constraint_info['max_special_shifts'] = (len(shifts['all-special-shifts']) / len(staph['all-staph'])) + 1
-	constraint_info['number_special_shift_types'] = len(shifts['special']['staph'])
-	constraint_info['programming_days'] = 5 # need to make this specific to each group
-	constraint_info['programing_limit_varience_week'] = 3 # need to make this specific to each group
-	constraint_info['programing_limit_varience_day'] = 7 # need to make this specific to each group
-	constraint_info['max_programming_hours'] = avg_programming_hours_by_group(staph, shifts, constraint_info)
-
+	# constraint_info = {}
+	# constraint_info['number_of_staphers'] = len(staph['all-staph'])
+	# constraint_info['max_special_shifts'] = (len(shifts['all-special-shifts']) / len(staph['all-staph'])) + 1
+	# constraint_info['number_special_shift_types'] = len(shifts['special']['staph'])
+	# constraint_info['programing_limit_varience'] = 3 # need to make this specific to each group
+	# constraint_info['max_programming_hours'] = avg_weekly_programming_hours_by_group(staph, shifts, constraint_info)
+	# constraint_info['max_programming_hours_of_type'] = limits_by_type_and_day(staph, shifts)
 	"""
 	Next we will place all programming shifts...
 	"""
-
-	schedule_programming_shifts(staph, shifts, constraint_info)
+	# schedule_programming_shifts(staph, shifts, constraint_info)
 	
 
 	"""
@@ -407,7 +526,8 @@ if __name__ == "__main__":
 	"""
 	Place all off day shifts...
 	"""
-	# add_off_day_restrictions(staph_by_positions, programming_shifts)
+	off_day_restrictions = get_off_day_restrictions(staph, shifts)
+	schedule_off_days(staph, off_day_restrictions)
 
 
 
@@ -418,9 +538,11 @@ if __name__ == "__main__":
 	# find_special_shift_sucess_rate(staph, shifts, constraint_info)
 
 	# See what happened...
-	print_staph(staph['ski-dock'], constraint_info)
+	# print off_day_restrictions
+
+	# print_staph(staph['ski-dock'], constraint_info)
 
 	# See what is missing...
-	print_uncovered_shifts(shifts['all-programming-shifts'])
+	# print_uncovered_shifts(shifts['all-programming-shifts'])
 
 

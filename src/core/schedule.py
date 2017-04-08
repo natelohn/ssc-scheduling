@@ -39,17 +39,25 @@ class Schedule:
 		if shift.is_programming():
 			self.programming_hours -= shift.length
 
-	def programming_hours_in_day(self, day):
+
+	def programming_hours_in_day(self,day):
 		programming_hours = 0
 		for shift in self.get_day_schedule(day):
 			if shift.is_programming():
 				programming_hours += shift.length
 		return programming_hours
 
+	def programming_hours_of_type_in_day(self, shift):
+		programming_hours_of_type = 0
+		for placed_shift in self.get_day_schedule(shift.day):
+			if placed_shift.type == shift.type:
+				programming_hours_of_type += shift.length
+		return programming_hours_of_type
+
 	def print_info(self):
 		days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
 		for i, day in enumerate(days):
-			print '		', day
+			print '		', day,': Programming Hours = ', self.programming_hours_in_day(i)
 			shifts = self.get_day_schedule(i)
 			order_shifts = []
 			for time in range(0,24):

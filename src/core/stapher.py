@@ -8,8 +8,9 @@ class Stapher:
 
 	id_counter = 1
 
-	def __init__(self,name,positions):
+	def __init__(self,name,gender,positions):
 		self.name = name
+		self.gender = gender
 		self.positions = positions
 		self.schedule = Schedule()
 		self.special_shift_preferences = []
@@ -56,14 +57,12 @@ class Stapher:
 	def reached_programming_limit_week(self, shift, constraint_info):
 		max_hours = 0 - shift.length
 		for position in self.positions:
-			max_hours += constraint_info['max_programming_hours']['week'][position]
+			max_hours += constraint_info['max_programming_hours'][position]
 		return self.schedule.programming_hours >= max_hours
 
-	def reached_programming_limit_day(self, shift, constraint_info):
-		max_hours = 0 - shift.length
-		for position in self.positions:
-			max_hours += constraint_info['max_programming_hours']['day'][position]
-		return self.schedule.programming_hours_in_day(shift.day) >= max_hours
+	def reached_programming_limit_type(self, shift, constraint_info):
+		max_hours = constraint_info['max_programming_hours_of_type'][shift.type][shift.day]
+		return self.schedule.programming_hours_of_type_in_day(shift) >= max_hours
 
 	# Not the best solution, but a quick way to implement without using python time objects
 	def off_day_scheduled(self):
