@@ -9,13 +9,15 @@ class Shift:
 
 	id_counter = 1
 
-	def __init__(self,day,title,start,end,category,s_type):
+	def __init__(self,day,title,start,end,category,eligible_workers,s_type):
 		self.day = day
 		self.title = title
 		self.start = start
 		self.end = end 
+		self.length = end - start
 		self.covered = False
 		self.category = category
+		self.eligible_workers = eligible_workers
 		self.type = s_type
 		self.id = Shift.id_counter
 		Shift.id_counter += 1
@@ -24,21 +26,34 @@ class Shift:
 		# If the shifts are on different days, no overlap
 		if self.day != other.day:
 			return False
+		return self.time_overlaps(other.start, other.end)
 
+	def time_overlaps(self, start, end):
 		# If shifts start at the same time, then they overlap
-		if self.start == other.start:
+		if self.start == start:
 			return True
 		# If self starts earlier, they overlap if other's start is before self's end
-		elif self.start < other.start:
-			return other.start < self.end
+		elif self.start < start:
+			return start < self.end
 		# If self starts later, they overlap if self's start is before other's end
 		else:
-			return self.start < other.end
+			return self.start < end
 
 		return False
 
 	def is_special(self):
-		return self.category == C.ShiftCategory.SPECIAL
+		return self.category == 'special'
+
+	def is_off_day(self):
+		return self.category == 'off-day'
+	
+	def is_programming(self):
+		return self.category == 'programming'
+
+	def is_ski_dock(self):
+		return self.eligible_workers == 'ski-dock'
+
+
 
 	def __eq__(self, other):
 		"""Overwrite the default == behavior."""

@@ -129,7 +129,14 @@ class ShiftCategory(Constants):
 	"""Constants for the different types of shifts."""
 
 	SPECIAL = 0
+	OFF_DAY = 1
+	PROGRAMMING = 2
 
 	STRINGS = {}
 	STRINGS[SPECIAL] = "Special"
+	STRINGS[OFF_DAY] = "Off Day"
+	STRINGS[PROGRAMMING] = "Programming"
+
+
+
 	
