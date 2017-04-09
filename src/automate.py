@@ -50,75 +50,39 @@ def get_shifts_from_csv_files(directory):
 			shifts_file.close()
 	return all_shifts
 
-def generate_schedules(staph, shifts):
-	"""Generates schedules for the given staph."""
 
-	# Create the scheulding CSP (Constraint Satisfaction Problem)
-	scheduling_csp = Problem()
-
-	# Add all the variables
-	# A shift's domain is all staphers, a shift could potentially
-	# be assigned any stapher
-	for shift in shifts:
-		scheduling_csp.addVariable(shift, staph)
-
-	# Add all the constraints to the CSP
-	add_constraints(scheduling_csp, shifts)
-
-	# Get the first possible solution to the CSP
-	solution = scheduling_csp.getSolution()
-
-	if solution:
-		for shift, stapher in solution.iteritems():
-			stapher.add_shift(shift)
-
-		for stapher in staph:
-			schedule = stapher.schedule
-		print 'IT WORKED I AM A GOD!'
+def DFS_Schedules(staph, shifts):
+	if shifts == []:
+		return True
 	else:
-		print staph
-		print 'No solution found :('
+		for shift in shifts:
+			for stapher in staph:
+				if passes_all_constraints(shift, stapher):
+					stapher.add_shift(shift)
+					shifts.remove(shift)
+					return DFS_Schedules(staph, shifts)
+			if shift in shifts:
+				print 'Could not place shift', shift
+				return False
+		
 
 
-def add_constraints(scheduling_csp, shifts):
+
+def passes_all_constraints(shift, stapher):
 	"""Add all of the constraints we want to the CSP."""
-
-	no_overlapping_shifts_constraint(scheduling_csp, shifts)
-
+	if shift == None or stapher == None:
+		return False
+	return stapher.free_during_shift(shift)
 	# TODO: Add more constraints!
 
 
-def no_overlapping_shifts_constraint(scheduling_csp, shifts):
-	"""
-	A stapher cannot work two shifts at the same time.
-
-	This loops over all shifts, and if two shifts overlap in time,
-	adds a constraint between them that they cannot have the same
-	stapher assigned to them.
-
-
-	Parameters
-	----------
-	scheulding_csp : Problem
-		Represents the scheduling constraint satisfaction problem.
-
-	shifts : List of Shifts
-		List of all Shift objects that need to be covered.
-	"""
-	for shift1 in shifts:
-		for shift2 in shifts:
-			if shift1 != shift2 and shift1.time_overlaps_with(shift2):
-				scheduling_csp.addConstraint(
-					lambda stapher1, stapher2: stapher1 != stapher2,
-					[shift1, shift2]
-				)
 
 if __name__ == "__main__":
 	year = '2016'
-	test = 'ski-dock'
+	test = 'c-and-q'
 	# all_staph = get_staph_from_csv_files('../input/test-csv-files/' + test + '/staph')
 	# all_shifts = get_shifts_from_csv_files('../input/test-csv-files/' + test + '/shifts')
-	all_staph = get_staph_from_csv_files('../input/past-csv-files/' + year + '/staph')
+	all_staph_groups = get_staph_from_csv_files('../input/past-csv-files/' + year + '/staph')
 	all_shifts = get_shifts_from_csv_files('../input/past-csv-files/' + year + '/shifts')
 
 	"""
@@ -128,23 +92,29 @@ if __name__ == "__main__":
 	"""
 	ordered_groups = []
 	for i in range(0,61):
-		for group_name in all_staph:
-			if len(all_staph[group_name]) < i and group_name not in ordered_groups:
+		for group_name in all_staph_groups:
+			if len(all_staph_groups[group_name]) < i and group_name not in ordered_groups:
 				ordered_groups.append(group_name)
-	"""
-	Now I build the schedules step by step...
-	"""
+	# """
+	# Now I build the schedules step by step...
+	# """
 	all_staphers = [] # For testing 
 	for group_name in ordered_groups:
 		# print 'Building', group_name, 'schedules...'
-		staph_group = all_staph[group_name]
+		staph_group = all_staph_groups[group_name]
 		shifts_for_group = all_shifts[group_name]
-		generate_schedules(staph_group, shifts_for_group)
+		if DFS_Schedules(staph_group, shifts_for_group):
+			print 'schedules found for', group_name
+		else:
+			print 'incomplete schedule for', group_name
+
+		# For printing...
 		for stapher in staph_group:
 			if stapher not in all_staphers:
 				all_staphers.append(stapher)
 				
 	# print the final scheudles
+	print len(all_staphers)
 	for stapher in all_staphers:
 		print stapher
 		stapher.schedule.print_info()
