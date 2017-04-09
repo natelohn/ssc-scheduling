@@ -8,9 +8,10 @@ class Stapher:
 
 	id_counter = 1
 
-	def __init__(self,name,position):
+	def __init__(self,name,position,alt_positions):
 		self.name = name
 		self.position = position
+		self.alt_positions = alt_positions
 		self.schedule = Schedule()
 		self.id = Stapher.id_counter
 		Stapher.id_counter += 1
