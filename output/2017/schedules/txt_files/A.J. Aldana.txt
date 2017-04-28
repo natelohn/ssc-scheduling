@@ -1,0 +1,7 @@
+Sunday,MunchBeffa(8:30am-9:00am)p,Munchkins(9:15am-11:45am)p
+Monday,Munchkins(9:15am-3:15pm)p
+Tuesday,Munchkins(9:15am-11:45am)p
+Wednesday,Off Day(4:00pm-11:30pm)
+Thursday,Off Day(6:00am-11:30pm)
+Friday,Munchkins(9:15am-11:45am)p
+Saturday

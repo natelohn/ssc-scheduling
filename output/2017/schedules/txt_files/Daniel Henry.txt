@@ -1,0 +1,7 @@
+Sunday,Sailing Clinic(10:30am-12:00pm)p,Sailing Clinic(1:00pm-2:00pm)p,Mido Sail(2:00pm-3:30pm)p
+Monday,Off Day(4:00pm-11:30pm),Sailing Clinic(1:00pm-4:00pm)p
+Tuesday,Off Day(6:00am-11:30pm)
+Wednesday,Family Sail(1:00pm-3:30pm)p
+Thursday,Sailing Clinic(2:30pm-5:30pm)p
+Friday,Sailing Refresher(1:00pm-2:00pm)p,Sailing Regatta(2:00pm-4:00pm)p
+Saturday

@@ -1,0 +1,7 @@
+Sunday,Tallacappella(10:00am-11:30am)p
+Monday,Off Day(4:00pm-11:30pm),Tallacappella(10:00am-11:30am)p,Hunes Music & Theater(1:00pm-2:00pm)p
+Tuesday,Off Day(6:00am-11:30pm)
+Wednesday,Tallacappella(10:00am-11:30am)p,Brother's Grimm(8:00pm-10:00pm)p
+Thursday,Tallacappella(10:00am-11:30am)p
+Friday,Tallacappella(4:00pm-5:00pm)p,Music Hour(5:30pm-7:00pm)p,Tallacapella(8:00pm-8:45pm)p,Kid's Talent Show!(1:00pm-3:00pm)p
+Saturday

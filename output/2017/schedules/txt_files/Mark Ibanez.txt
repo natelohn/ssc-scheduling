@@ -1,0 +1,7 @@
+Sunday,Off Day(4:00pm-11:30pm),SnoopBeffa(7:45am-8:45am)p,Snoopers(2:00pm-4:00pm)p,Snoopers(9:30am-11:45am)p
+Monday,Off Day(6:00am-11:30pm)
+Tuesday,Snoopers(2:00pm-4:00pm)p,Snoopers(9:30am-11:45am)p
+Wednesday
+Thursday,Snoopers(9:30am-3:30pm)p
+Friday,ICOM BEFFA(9:00am-9:15am)p,Snoopers(9:30am-11:45am)p
+Saturday

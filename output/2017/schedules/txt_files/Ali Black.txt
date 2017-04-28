@@ -1,0 +1,7 @@
+Sunday,Off Day(4:00pm-11:30pm),Art Closet Clean(9:15am-9:45am)p,Art(9:45am-11:45am)p,Art Prep(1:45pm-2:00pm)p,Art Boatster(2:00pm-4:00pm)p
+Monday,Off Day(6:00am-11:30pm)
+Tuesday,Art(9:45am-11:45am)p,Art Prep(1:45pm-2:00pm)p,Art(2:00pm-4:00pm)p,Art Prep(1:15pm-1:30pm)p
+Wednesday,Welcome Board EVEN(9:00am-10:00am)p,Family Art(1:30pm-4:00pm)p
+Thursday,Art(9:45am-11:45am)p,Art Prep(1:45pm-2:00pm)p,Art(2:00pm-4:00pm)p
+Friday,Art(9:45am-11:45am)p,Art Social(4:00pm-5:00pm)p
+Saturday

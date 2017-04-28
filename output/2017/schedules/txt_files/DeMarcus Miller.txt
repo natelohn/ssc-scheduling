@@ -1,0 +1,7 @@
+Sunday,Midos Beffa(8:30am-9:30am)p,Midorees(2:00pm-4:00pm)p,Midorees(9:30am-11:45am)p,Midorees(8:00pm-9:15pm)p
+Monday,Midorees(9:30am-3:30pm)p
+Tuesday,Midorees(2:00pm-4:00pm)p,Midorees(9:30am-11:45am)p
+Wednesday,Off Day(4:00pm-11:30pm)
+Thursday,Off Day(6:00am-11:30pm)
+Friday,Midorees(9:30am-11:45am)p
+Saturday

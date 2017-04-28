@@ -1,0 +1,7 @@
+Sunday,Boatster Prep(9:00am-9:15am)p,Nature Boatster(9:15am-10:30am)p,Hunes Nature(2:00pm-3:00pm)p
+Monday,Mido Nature(9:30am-10:00am)p,Munchkins Nature(11:00am-11:45am)p
+Tuesday,Off Day(4:00pm-11:30pm),Yahoo Nature(9:30am-10:15am)p
+Wednesday,Off Day(6:00am-11:30pm)
+Thursday
+Friday
+Saturday

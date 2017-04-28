@@ -19,45 +19,28 @@ class Schedule:
 		shift.covered = True
 		self.all_shifts[shift.day].append(shift)
 		self.total_shifts = self.total_shifts + 1
-		if shift.is_special():
-			self.total_special_shifts = self.total_special_shifts + 1
-			self.special_shift_types.append(shift.type)
-		if shift.is_off_day():
-			self.off_shifts.append(shift)
-		if shift.is_programming():
-			self.programming_hours += shift.length
 
 	def remove_shift(self,shift):
 		shift.covered = False
 		self.all_shifts[shift.day].remove(shift)
 		self.total_shifts = self.total_shifts - 1
-		if shift.is_special():
-			self.total_special_shifts = self.total_special_shifts - 1
-			self.special_shift_types.remove(shift.type)
-		if shift.is_off_day():
-			self.off_shifts.remove(shift)
-		if shift.is_programming():
-			self.programming_hours -= shift.length
 
-
-	def programming_hours_in_day(self,day):
-		programming_hours = 0
-		for shift in self.get_day_schedule(day):
-			if shift.is_programming():
-				programming_hours += shift.length
-		return programming_hours
-
-	def programming_hours_of_type_in_day(self, shift):
-		programming_hours_of_type = 0
-		for placed_shift in self.get_day_schedule(shift.day):
-			if placed_shift.type == shift.type:
-				programming_hours_of_type += shift.length
-		return programming_hours_of_type
+	def get_sorted_shift_times_for_day(self,day):
+		times = []
+		for shift in self.all_shifts[day]:
+			if shift.title != 'Off Day':
+				times.append([shift.start,shift.end])
+		last_time = [0,0]
+		for time_set in sorted(times):
+			if last_time[1] > time_set[0]:
+				print '*****************************************I FUCKED UP SORTING TIMES!*****************************************', last_time,time_set
+			last_time = time_set
+		return sorted(times)
 
 	def print_info(self):
 		days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
 		for i, day in enumerate(days):
-			print '		', day,': Programming Hours = ', self.programming_hours_in_day(i)
+			print '		', day
 			shifts = self.get_day_schedule(i)
 			order_shifts = []
 			for time in range(0,24):

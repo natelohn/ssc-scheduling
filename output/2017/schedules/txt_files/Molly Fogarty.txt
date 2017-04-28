@@ -1,0 +1,7 @@
+Sunday,Volleyball(1:30pm-4:30pm)p
+Monday,Boat Dock Maint(9:15am-10:00am)p,Volleyball(10:00am-11:00am)p,Volleyball(1:00pm-2:00pm)p
+Tuesday,Kid's Volleyball(10:00am-12:00pm)p
+Wednesday,Off Day(4:00pm-11:30pm),Volleyball(1:00pm-3:30pm)p
+Thursday,Off Day(6:00am-11:30pm)
+Friday,Staph v. Guest Tournament(1:00pm-4:30pm)p
+Saturday,Boat Dock Review(4:00pm-4:30pm)p
