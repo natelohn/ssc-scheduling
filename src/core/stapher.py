@@ -71,6 +71,19 @@ class Stapher:
 				programming_shifts.append(shift)
 		return programming_shifts
 
+	def get_meal_hours_by_day(self, day):
+		meal_hours = 0
+		for shift in self.schedule.all_shifts[day]:
+			if shift.is_meal_shift():
+				meal_hours += shift.length
+		return meal_hours
+
+	def get_total_meal_hours(self):
+		total_meal_hours = 0
+		days = [0, 1, 2, 3, 4, 5, 6]
+		for day in days:
+			total_meal_hours += self.get_meal_hours_by_day(day)
+		return total_meal_hours
 
 	def work_times_by_day(self):
 		work_times_by_day = {}

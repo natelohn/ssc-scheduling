@@ -42,6 +42,11 @@ class Shift:
 	def at_same_time(self,other):
 		return self.day == other.day and self.start == other.start and self.end == other.end
 
+	def is_meal_shift(self):
+		meal_shift_titles = ["Breakfast", "Lunch", "Dinner", "Breakfast Head", "Lunch Head", "Dinner Head"]
+		return self.title in meal_shift_titles
+
+
 	def __eq__(self, other):
 		"""Overwrite the default == behavior."""
 		if type(self) is type(other):

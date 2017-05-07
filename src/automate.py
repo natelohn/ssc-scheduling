@@ -740,6 +740,13 @@ def get_staphers_free_during_shift(staphers,shift):
 			free_staphers.append(stapher)
 	return free_staphers
 
+def get_staphers_busy_during_shift(staphers, shift):
+	busy_staphers = []
+	for stapher in staphers:
+		if not stapher.free_during_shift(shift):
+			busy_staphers.append(stapher)
+	return busy_staphers
+
 def make_programming_stats(staph):
 	stats = ''
 	day_names = ['Sun','Mon','Tues','Wed','Thur','Fri','Sat']
@@ -1026,37 +1033,118 @@ def special_shifts(staph, shifts):
 		max_special_shifts = max_special_shifts + count
 		count += 1
 	# schedule_special_shifts(staph, shifts)
+
+def make_meal_statistics(staph, shifts):
+	for shift_type in shifts['meal']:
+		meal_shifts = shifts[shift_type]
+
+		for shift in meal_shifts:
+			print shift, " ", shift.covered
+
+def get_best_stapher_for_meal_shift(free_staphers, shift):
+	chosen_stapher = random.choice(free_staphers)
+	break_period = 0.25
+	for stapher in free_staphers:
+		chosen_day_hours = chosen_stapher.get_meal_hours_by_day(shift.day)
+		staphers_day_hours = stapher.get_meal_hours_by_day(shift.day)
+		if stapher.get_total_meal_hours() < chosen_stapher.get_total_meal_hours():
+			if staphers_day_hours < chosen_day_hours:
+				chosen_stapher = stapher
+			elif stapher.free_during_time(shift.day,shift.start - break_period, shift.start + break_period):
+				chosen_stapher = stapher
+		elif staphers_day_hours < chosen_day_hours:
+			if stapher.free_during_time(shift.day,shift.start - break_period, shift.start + break_period):
+				chosen_stapher = stapher
+
+	return chosen_stapher
 	
+def automate_meal_shifts(staph, shifts):
+	num_shifts_to_fill = len(shifts)
+	num_filled = 0
+	best_filled = 0
+
+	while num_filled < 277:
+
+		# Reset meal shifts:
+		for meal_shift in shifts:
+			if meal_shift.covered:
+				meal_shift.stapher.remove_shift(meal_shift)
+
+		num_filled = 0
+		for shift in shifts:
+			free_staphers = get_staphers_free_during_shift(staph,shift)
+
+			# Conflict, reset meal shifts
+			if len(free_staphers) == 0:
+				
+
+				# Print out conflicting schedules
+				# if num_filled >= 242:
+					# print "CONFLICT SHIFT: ", shift
+					
+					# for stapher in staph:
+						# print stapher.name, " ", stapher.schedule.get_shift_at_time(shift.day, shift.start, shift.end) , "\n"
+						# print stapher.schedule.get_day_schedule(shift.day)
+				
+				# Reset shifts to try again
+				# for meal_shift in shifts:
+				# 	if meal_shift.covered:
+				# 		meal_shift.stapher.remove_shift(meal_shift)
+
+
+
+				# num_filled = 0
+				continue
+
+			chosen_stapher = get_best_stapher_for_meal_shift(free_staphers, shift)
+			chosen_stapher.add_shift(shift)
+			num_filled += 1
+
+		if num_filled >= 276:
+			print num_filled
+
 def meal_shifts(staph,shifts):
-	for meal in shifts['meal']:
-		print meal
-		meal_shifts_to_fill = shifts[meal]
-		while len(meal_shifts_to_fill) != 0:
-			staphers = list(staph['all-staph'])
-			meal_shifts_to_fill = shifts[meal]
-			print len(meal_shifts_to_fill)
-			tries_for_stapher = 0
-			tried_shifts = []
-			while len(meal_shifts_to_fill) > 0 and not len(staphers) == 0:
-				# print len(staphers), 'to cover',len(meal_shifts_to_fill),'shifts.'
-				stapher = staphers[0]
-				meal_shift = meal_shifts_to_fill[random.randint(0,len(meal_shifts_to_fill) - 1)]
-				while meal_shift in tried_shifts:
-					meal_shift = meal_shifts_to_fill[random.randint(0,len(meal_shifts_to_fill) - 1)]
-				tried_shifts.append(meal_shift)
-				if stapher.free_during_shift(meal_shift):
-					stapher.add_shift(meal_shift)
-					staphers.remove(stapher)
-					staphers.append(stapher)
-					meal_shifts_to_fill.remove(meal_shift)
-					tried_shifts = []
-				# print '	tried',len(tried_shifts),'out of',len(meal_shifts_to_fill),'shifts'
-				if len(tried_shifts) == len(meal_shifts_to_fill):
-					staphers.remove(stapher)
-					tried_shifts = []
-			print '	',len(meal_shifts_to_fill),'uncovered'
-			for uncovered_meal_shift in meal_shifts_to_fill:
-				print uncovered_meal_shift
+
+	# Filter out shifts that have been covered
+	shifts_to_cover = []
+	for shift_type in shifts['meal']:
+		meal_shifts = shifts[shift_type]
+		
+		for shift in meal_shifts:
+			if not shift.covered:
+				shifts_to_cover.append(shift)
+
+	automate_meal_shifts(staph['all-staph'], shifts_to_cover)
+
+	# for meal in shifts['meal']:
+	# 	print meal
+	# 	meal_shifts_to_fill = shifts[meal]
+	# 	while len(meal_shifts_to_fill) != 0:
+	# 		staphers = list(staph['all-staph'])
+	# 		meal_shifts_to_fill = shifts[meal]
+	# 		print len(meal_shifts_to_fill)
+	# 		tries_for_stapher = 0
+	# 		tried_shifts = []
+	# 		while len(meal_shifts_to_fill) > 0 and not len(staphers) == 0:
+	# 			# print len(staphers), 'to cover',len(meal_shifts_to_fill),'shifts.'
+	# 			stapher = staphers[0]
+	# 			meal_shift = meal_shifts_to_fill[random.randint(0,len(meal_shifts_to_fill) - 1)]
+	# 			while meal_shift in tried_shifts:
+	# 				meal_shift = meal_shifts_to_fill[random.randint(0,len(meal_shifts_to_fill) - 1)]
+	# 			tried_shifts.append(meal_shift)
+	# 			if stapher.free_during_shift(meal_shift):
+	# 				stapher.add_shift(meal_shift)
+	# 				staphers.remove(stapher)
+	# 				staphers.append(stapher)
+	# 				meal_shifts_to_fill.remove(meal_shift)
+	# 				tried_shifts = []
+	# 			# print '	tried',len(tried_shifts),'out of',len(meal_shifts_to_fill),'shifts'
+	# 			if len(tried_shifts) == len(meal_shifts_to_fill):
+	# 				staphers.remove(stapher)
+	# 				tried_shifts = []
+	# 		print '	',len(meal_shifts_to_fill),'uncovered'
+	# 		for uncovered_meal_shift in meal_shifts_to_fill:
+	# 			print uncovered_meal_shift
 				# print get_who_is_free_during_shift(staph,uncovered_meal_shift)
 		
 def get_readable_time(time):
@@ -1523,7 +1611,7 @@ def make_schedules(staph,shifts,erase_schedules,reset_schedules,upload_schedules
 		special_shifts(staph, shifts)
 	if shifts_to_generate[3]:
 		print '	GENERATING SCHEDULES W/ MEAL SHIFTS'
-		print 'TODO: need to implement meal shifts'
+		meal_shifts(staph, shifts)
 	if shifts_to_generate[4]:
 		# print '	GENERATING SCHEDULES W/ LIFEGUADING SHIFTS'
 		print '		need to implement lifeguarding shift automation'
@@ -1540,6 +1628,7 @@ def make_schedules(staph,shifts,erase_schedules,reset_schedules,upload_schedules
 		print '	MAKING STATISTICS FILES'
 		make_off_day_statistics(staph,shifts)
 		make_programming_stats(staph)
+		make_meal_statistics(staph, shifts)
 		# make_special_shift_statistics(staph,shifts)
 	if output_xl_schedules:
 		print '	OUTPUTTING XL + STATISTICS'

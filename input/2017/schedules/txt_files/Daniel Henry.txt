@@ -1,7 +1,7 @@
-Sunday,Sailing Clinic(10:30am-12:00pm)p,Sailing Clinic(1:00pm-2:00pm)p,Mido Sail(2:00pm-3:30pm)p
-Monday,Off Day(4:00pm-11:30pm),Sailing Clinic(1:00pm-4:00pm)p,Hobart(7:00am-10:30am)
+Sunday,Sailing Clinic(10:30am-12:00pm)p,Sailing Clinic(1:00pm-2:00pm)p,Mido Sail(2:00pm-3:30pm)p,Breakfast Head(6:45am-10:15am)
+Monday,Off Day(4:00pm-11:30pm),Sailing Clinic(1:00pm-4:00pm)p,Hobart(7:00am-10:30am),Lunch(11:45am-1:00pm)
 Tuesday,Off Day(6:00am-11:30pm)
-Wednesday,Brothers Grimm(8:00pm-10:00pm),Family Sail(1:00pm-3:30pm)p,Beffa 7:30-9:30 & Games Day 9:45-12 (7:30am-12:00pm)
-Thursday,Sailing Clinic(1:30pm-4:30pm)p
-Friday,Sailing Touch-Up(1:00pm-2:00pm)p,Sailing Regatta(2:00pm-4:00pm)p,Rowing(6:15am-8:15am)
+Wednesday,Brothers Grimm(8:00pm-10:00pm),Family Sail(1:00pm-3:30pm)p,Beffa 7:30-9:30 & Games Day 9:45-12 (7:30am-12:00pm),Dinner(6:00pm-8:00pm)
+Thursday,Sailing Clinic(1:30pm-4:30pm)p,Breakfast(6:45am-10:15am),Dinner Head(5:15pm-8:00pm)
+Friday,Sailing Touch-Up(1:00pm-2:00pm)p,Sailing Regatta(2:00pm-4:00pm)p,Rowing(6:15am-8:15am),Lunch(11:45am-1:00pm)
 Saturday

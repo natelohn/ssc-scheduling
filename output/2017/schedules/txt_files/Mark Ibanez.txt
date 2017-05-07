@@ -1,7 +1,7 @@
-Sunday,Snoopers(2:00pm-4:00pm)p,Snoopers(9:30am-11:45am)p
-Monday,Snoopers(9:30am-3:30pm)p,DiscoBingo(7:00pm-9:00pm)
-Tuesday,Snoopers(2:00pm-4:00pm)p,Snoopers(9:30am-11:45am)p,Wine(5:15pm-7:30pm)
-Wednesday,Off Day(4:00pm-11:30pm)
+Sunday,Snoopers(2:00pm-4:00pm)p,Snoopers(9:30am-11:45am)p,Dinner(6:00pm-8:00pm)
+Monday,Snoopers(9:30am-3:30pm)p,DiscoBingo(7:00pm-9:00pm),Breakfast(7:30am-9:00am)
+Tuesday,Snoopers(2:00pm-4:00pm)p,Snoopers(9:30am-11:45am)p,Wine(5:15pm-7:30pm),Lunch(12:00pm-2:00pm)
+Wednesday,Off Day(4:00pm-11:30pm),Lunch(12:00pm-2:00pm)
 Thursday,Off Day(6:00am-11:30pm)
-Friday,Snoopers(9:30am-11:45am)p,ICOM BEFFA(12:00pm-12:30pm)p
+Friday,Snoopers(9:30am-11:45am)p,ICOM BEFFA(12:00pm-12:30pm)p,Dinner(5:15pm-8:00pm)
 Saturday,Snooper Beffa(6:30pm-7:00pm)p

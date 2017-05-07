@@ -1,7 +1,7 @@
-Sunday,Nature Boatster(9:00am-10:30am)p
-Monday,Hobart(5:30pm-8:00pm)
+Sunday,Nature Boatster(9:00am-10:30am)p,Lunch Head(11:15am-2:00pm)
+Monday,Hobart(5:30pm-8:00pm),Breakfast(6:45am-10:15am),Lunch Head(11:15am-2:00pm)
 Tuesday,Off Day(4:00pm-11:30pm),Town Run(9:00am-12:00pm)
 Wednesday,Off Day(6:00am-11:30pm)
 Thursday,Nature Hike(9:30am-4:00pm)p,Boatster(4:30pm-6:15pm)
-Friday,Bread Bake(3:00pm-4:00pm)
-Saturday
+Friday,Bread Bake(3:00pm-4:00pm),Breakfast(8:15am-10:15am),Dinner(5:30pm-7:00pm)
+Saturday,Dinner(5:15pm-8:00pm)
