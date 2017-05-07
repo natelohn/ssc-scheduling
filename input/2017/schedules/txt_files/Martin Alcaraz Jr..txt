@@ -1,0 +1,7 @@
+Sunday,Chicken(4:30pm-8:00pm)p
+Monday,Breakfast Chef(7:00am-11:00am)p,Off Day(4:00pm-11:30pm)
+Tuesday,Off Day(6:00am-11:30pm)
+Wednesday,Brothers Grimm(8:00pm-10:00pm),Chicken(4:30pm-8:00pm)p
+Thursday,Chicken(9:00am-1:30pm)p
+Friday,Chicken(9:00am-1:30pm)p,Chicken(4:30pm-8:00pm)p
+Saturday,Chicken(9:00am-1:30pm)p

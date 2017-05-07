@@ -1,0 +1,7 @@
+Sunday,Hunes(9:30am-11:45am)p,Hunes(2:00pm-4:00pm)p
+Monday,Hunes(9:30am-3:30pm)p
+Tuesday,Hunes(2:00pm-4:00pm)p,Hunes(9:30am-11:45am)p
+Wednesday,Off Day(4:00pm-11:30pm)
+Thursday,Off Day(6:00am-11:30pm)
+Friday,Hunes(9:30am-11:45am)p
+Saturday,Hunes Beffa(7:00pm-7:30pm)p

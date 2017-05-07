@@ -1,0 +1,7 @@
+Sunday,Off Day(4:00pm-11:30pm),Photo(9:30am-11:30am)p,Photo(1:00pm-3:00pm)p
+Monday,Off Day(6:00am-11:30pm)
+Tuesday,Photo(2:00pm-4:00pm)p,Photo(9:30am-11:30am)p,Family Portraits(4:30pm-6:00pm)p
+Wednesday,Family Portraits(6:30pm-7:30pm)p,Ski Show Beffa ODD Weeks/Games Day Beffa EVEN Weeks(7:30am-9:30am)p,Photo(2:00pm-4:30pm)p,Games Day Photo EVEN/Ski Show Photo ODD(9:45am-12:00pm)p
+Thursday,Slideshow Prep(4:00pm-5:00pm)p,Photo(10:30am-11:30am)p,Midoreee Photo(8:00pm-9:00pm)p
+Friday,Slideshow(7:30pm-8:45pm)p,Photo(9:30am-11:30am)p,Slideshow Prep(1:00pm-6:00pm)p
+Saturday,PhotoWrap-Up(4:00pm-5:00pm)p

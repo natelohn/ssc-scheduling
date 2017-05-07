@@ -1,0 +1,7 @@
+Sunday,Open Climb(9:15am-12:15pm)p,Suaves Climb(12:45pm-2:30pm)p,Yahoos Climb(2:30pm-4:15pm)p
+Monday,Outdoor Climb(8:00am-12:00pm)p,Teen Climb(1:15pm-2:45pm)p
+Tuesday,Mido Climb(10:30am-12:00pm)p,Bouldering(1:00pm-6:00pm)p
+Wednesday,Off Day(4:00pm-11:30pm),Open Climb(1:45pm-3:45pm)p
+Thursday,Off Day(6:00am-11:30pm)
+Friday,Competitive Climbing(9:45am-11:45am)p
+Saturday
