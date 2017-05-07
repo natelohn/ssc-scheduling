@@ -1,6 +1,5 @@
 import csv, os, random
 from core import Stapher, Shift, Schedule, constants
-from constraint import Problem, Variable, Domain
 from openpyxl import load_workbook, Workbook
 from openpyxl.styles import Alignment, Color, PatternFill, Font, Border, Side
 
@@ -1612,6 +1611,7 @@ def make_schedules(staph,shifts,erase_schedules,reset_schedules,upload_schedules
 	if shifts_to_generate[3]:
 		print '	GENERATING SCHEDULES W/ MEAL SHIFTS'
 		meal_shifts(staph, shifts)
+
 	if shifts_to_generate[4]:
 		# print '	GENERATING SCHEDULES W/ LIFEGUADING SHIFTS'
 		print '		need to implement lifeguarding shift automation'

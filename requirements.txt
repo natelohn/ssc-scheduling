@@ -1,2 +1,2 @@
 ### Requirements for this project ###
-python-constraint >= 1.2
+openpyxl >= 2.4.7
