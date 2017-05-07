@@ -834,12 +834,6 @@ def automate_programming(staphers, shifts_to_fill):
 				if stapher.free_during_time(shift.day,shift.start - break_period, shift.start + break_period):
 					chosen_stapher = stapher
 		chosen_stapher.add_shift(shift)
-	three_hour_plus_shifts = 0
-	for stapher in staphers:
-		for length in stapher.get_lengths_without_break():
-			if length > 3:
-				three_hour_plus_shifts += 1
-	return three_hour_plus_shifts
 
 def programming(staph,shifts):
 	positions = staph.keys()
@@ -1031,7 +1025,7 @@ def special_shifts(staph, shifts):
 						special_shifts_to_cover.remove(shift)
 		max_special_shifts = max_special_shifts + count
 		count += 1
-	schedule_special_shifts(staph, shifts)
+	# schedule_special_shifts(staph, shifts)
 	
 def meal_shifts(staph,shifts):
 	for meal in shifts['meal']:
@@ -1526,8 +1520,10 @@ def make_schedules(staph,shifts,erase_schedules,reset_schedules,upload_schedules
 		programming(staph,shifts)
 	if shifts_to_generate[2]:
 		print '	GENERATING SCHEDULES W/ SPECIAL SHIFTS'
+		special_shifts(staph, shifts)
 	if shifts_to_generate[3]:
 		print '	GENERATING SCHEDULES W/ MEAL SHIFTS'
+		print 'TODO: need to implement meal shifts'
 	if shifts_to_generate[4]:
 		# print '	GENERATING SCHEDULES W/ LIFEGUADING SHIFTS'
 		print '		need to implement lifeguarding shift automation'

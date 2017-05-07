@@ -49,7 +49,7 @@
 		Sat: 1 shifts, 1.0 hours
 
 =============================SKI-DOCK===============================
-101 TOTAL SHIFTS, 1 SHIFT(S) UNCOVERED!, 15 SHIFTS LONGER THAN 3 HOURS!
+101 TOTAL SHIFTS, 1 SHIFT(S) UNCOVERED!, 16 SHIFTS LONGER THAN 3 HOURS!
 UNCOVERED SHIFT(S):
 	Dock: Wednesday 16.0 - 17.0
 	Austin Jones, 18 programming shifts, 36.0 programming hours, 3 SHIFT(S) LONGER THAN 3 HOURS!
@@ -84,7 +84,7 @@ UNCOVERED SHIFT(S):
 		Thur: 3 shifts, 5.75 hours
 		Fri: 4 shifts, 9.75 hours
 		Sat: 1 shifts, 1.0 hours
-	Halle Payne, 18 programming shifts, 32.25 programming hours, 2 SHIFT(S) LONGER THAN 3 HOURS!
+	Halle Payne, 18 programming shifts, 32.25 programming hours, 3 SHIFT(S) LONGER THAN 3 HOURS!
 		Sun: 3 shifts, 4.75 hours
 		Mon: 4 shifts, 7.75 hours
 		Tues: 3 shifts, 4.75 hours

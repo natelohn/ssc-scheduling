@@ -1,7 +1,7 @@
-Sunday,Midos Beffa(8:30am-9:00am)p,Midorees(2:00pm-4:00pm)p,Midorees(9:30am-11:45am)p
-Monday,Midorees(9:30am-3:30pm)p
+Sunday,Midos Beffa(8:30am-9:00am)p,Midorees(2:00pm-4:00pm)p,Midorees(9:30am-11:45am)p,Hobart(5:30pm-8:00pm)
+Monday,Midorees(9:30am-3:30pm)p,DiscoBingo(7:00pm-9:00pm)
 Tuesday,Midorees(2:00pm-4:00pm)p,Midorees(9:30am-11:45am)p
 Wednesday,Off Day(4:00pm-11:30pm)
 Thursday,Off Day(6:00am-11:30pm)
-Friday,Midorees(9:30am-11:45am)p
+Friday,Midorees(9:30am-11:45am)p,Staph v. Guest Vball(2:00pm-4:00pm)
 Saturday

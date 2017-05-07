@@ -1,7 +1,7 @@
-Sunday,Chicken(4:30pm-8:00pm)p
+Sunday,Chicken(4:30pm-8:00pm)p,Hobart(12:00pm-2:30pm)
 Monday,Chicken(4:30pm-8:00pm)p
 Tuesday,Chicken(9:00am-1:30pm)p,Chicken(4:30pm-8:00pm)p
-Wednesday,Chicken(9:00am-1:30pm)p
+Wednesday,Chicken(9:00am-1:30pm)p,Campfire(7:00pm-9:00pm)
 Thursday,Off Day(4:00pm-11:30pm),Breakfast Chef(7:00am-11:00am)p
 Friday,Off Day(6:00am-11:30pm)
 Saturday,Chicken(9:00am-1:30pm)p

@@ -1,5 +1,5 @@
-Sunday,Hunes(9:30am-11:45am)p,Hunes(2:00pm-4:00pm)p
-Monday,Hunes(9:30am-3:30pm)p
+Sunday,Hunes(9:30am-11:45am)p,Hunes(2:00pm-4:00pm)p,HooHune Night(7:45pm-9:15pm)
+Monday,Hunes(9:30am-3:30pm)p,Boatster(4:30pm-6:15pm)
 Tuesday,Off Day(4:00pm-11:30pm),Hunes(2:00pm-4:00pm)p,Hunes(9:30am-11:45am)p
 Wednesday,Off Day(6:00am-11:30pm)
 Thursday,Hunes(9:30am-3:30pm)p

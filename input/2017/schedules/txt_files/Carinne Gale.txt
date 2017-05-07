@@ -1,7 +1,7 @@
 Sunday,Off Day(4:00pm-11:30pm),Snoopers(2:00pm-4:00pm)p,Snoopers(9:30am-11:45am)p
 Monday,Off Day(6:00am-11:30pm)
-Tuesday,Snoopers(2:00pm-4:00pm)p,Snoopers(9:30am-11:45am)p
-Wednesday
-Thursday,Snoopers(9:30am-3:30pm)p
+Tuesday,Snoopers(2:00pm-4:00pm)p,Snoopers(9:30am-11:45am)p,Hobart(5:30pm-8:00pm)
+Wednesday,StoryHour(4:45pm-6:00pm),Campfire(7:00pm-9:00pm)
+Thursday,Snoopers(9:30am-3:30pm)p,MuSnoo Night(7:45pm-9:15pm)
 Friday,Snoopers(9:30am-11:45am)p
 Saturday,Snooper Beffa(6:30pm-7:00pm)p
