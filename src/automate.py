@@ -36,6 +36,16 @@ def get_off_day_pairs(staph,file):
 				stapher.pairs_to_avoid = off_day_pairs
 	off_day_file.close()
 
+def get_lifeguards(staph,file):
+	lifeguard_file = open(file)
+	csv_file = csv.reader(lifeguard_file)
+	for line in csv_file:
+		name = line[0]
+		stapher = get_stapher_by_name(name,staph['all-staph'])
+		stapher.is_lifeguard = True
+	lifeguard_file.close()
+
+
 def get_staph_from_csv_file(file):
 	staph_file = open(file)
 	csv_staph_file = csv.reader(staph_file)
@@ -58,6 +68,7 @@ def get_staph_from_csv_file(file):
 	get_who_has_car(staph,'../input/2017/info/has-car.csv')
 	get_special_shift_rankings(staph,'../input/2017/info/special-shift-rankings.csv')
 	get_off_day_pairs(staph,'../input/2017/info/day-off-pairs.csv')
+	get_lifeguards(staph, '../input/2017/info/lifeguards.csv')
 	return staph
 
 def get_shifts_from_csv_file(filename, is_programming):
@@ -856,8 +867,44 @@ def programming(staph,shifts):
 			automate_programming(staphers, list(shifts_to_fill))
 
 
+def make_lifeguarding_statistic(staph,shifts):
+	stats = ''
+	lifeguarding_shifts = shifts['lifeguarding-shifts']
+	for stapher in staph['all-staph']:
+		stats += '--------------------------------\n'
+		staphers_lg_shift = stapher.get_staphers_shifts_in_set(lifeguarding_shifts)
+		stats += stapher.name + ', ' + str(len(staphers_lg_shift)) + ' total lifeguarding shifts\n'
+		for shift in staphers_lg_shift:
+			stats += str(shift) + ','
+		stats = stats[:-1] + '\n'
+	print stats
+
 						
-	
+def lifeguarding(staph,shifts):
+	lifeguarding_shifts = shifts['lifeguarding-shifts']
+	for shift in lifeguarding_shifts:
+		free_staphers = get_staphers_free_during_shift(staph['all-staph'],shift)
+		for stapher in free_staphers:
+			if not stapher.is_lifeguard:
+				free_staphers.remove(stapher)
+		if len(free_staphers) == 0:
+			print 'NO STAPHERS CAN COVER:', shift
+			quit()
+		chosen_stapher = free_staphers[random.randint(0,len(free_staphers) - 1)]
+		for other_stapher in free_staphers:
+			chosen_lifeguarding_shifts = chosen_stapher.get_staphers_shifts_in_set(lifeguarding_shifts)
+			other_lifeguarding_shifts = other_stapher.get_staphers_shifts_in_set(lifeguarding_shifts)
+			if other_lifeguarding_shifts < chosen_lifeguarding_shifts:
+				chosen_stapher = other_stapher
+		chosen_stapher.add_shift(shift)
+		# another_one = lifeguarding_shifts[random.randint(0,len(lifeguarding_shifts) - 1)]
+		# while another_one.covered or not chosen_stapher.free_during_shift(another_one):
+		# 	another_one = lifeguarding_shifts[random.randint(0,len(lifeguarding_shifts) - 1)]
+		# chosen_stapher.add_shift(another_one)
+
+
+
+
 
 def stapher_has_no_shift_of_type(stapher,preference,shifts):
 	for shift in stapher.all_shifts():
@@ -975,7 +1022,7 @@ def make_special_shift_statistics(staph,shifts):
 		totals += str(special_shift_totals[total]) + ' staphers with ' + str(total) + ' special shifts.\n'
 	totals += '-------------------------------------------------------------\n'
 	stat_text = warnings + totals + stat_text
-	print stat_text
+	# print stat_text
 	directory = '../output/2017/masters'
 	if not os.path.exists(directory):
 		os.makedirs(directory)
@@ -1525,8 +1572,8 @@ def make_schedules(staph,shifts,erase_schedules,reset_schedules,upload_schedules
 		print '	GENERATING SCHEDULES W/ MEAL SHIFTS'
 		print 'TODO: need to implement meal shifts'
 	if shifts_to_generate[4]:
-		# print '	GENERATING SCHEDULES W/ LIFEGUADING SHIFTS'
-		print '		need to implement lifeguarding shift automation'
+		print '	GENERATING SCHEDULES W/ LIFEGUADING SHIFTS'
+		lifeguarding(staph,shifts)
 	if shifts_to_generate[5]:
 		# print '	GENERATING SCHEDULES W/ BOAT DOCK SHIFTS'
 		print '		need to implement boat dock shift automation'
@@ -1540,7 +1587,8 @@ def make_schedules(staph,shifts,erase_schedules,reset_schedules,upload_schedules
 		print '	MAKING STATISTICS FILES'
 		make_off_day_statistics(staph,shifts)
 		make_programming_stats(staph)
-		# make_special_shift_statistics(staph,shifts)
+		make_special_shift_statistics(staph,shifts)
+		make_lifeguarding_statistic(staph,shifts)
 	if output_xl_schedules:
 		print '	OUTPUTTING XL + STATISTICS'
 		make_schedule_txt_files(staph,'../output/2017/schedules/txt_files')
@@ -1557,8 +1605,8 @@ if __name__ == "__main__":
 	erase_schedules = False
 	reset_schedules = False
 	upload_schedules = True
-	shifts_to_generate = [False,False,False,False,False,False,False]
-	save_schedules = True
+	shifts_to_generate = [False,False,False,False,True,False,False]
+	save_schedules = False
 	make_statistic_files = True
 	output_xl_schedules = False
 	make_schedules(staph,shifts,erase_schedules,reset_schedules,upload_schedules,shifts_to_generate,save_schedules,make_statistic_files,output_xl_schedules)

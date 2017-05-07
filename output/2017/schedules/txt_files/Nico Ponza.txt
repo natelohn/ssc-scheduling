@@ -3,5 +3,5 @@ Monday,Hunes(9:30am-3:30pm)p,Boatster(4:30pm-6:15pm)
 Tuesday,Off Day(4:00pm-11:30pm),Hunes(2:00pm-4:00pm)p,Hunes(9:30am-11:45am)p
 Wednesday,Off Day(6:00am-11:30pm)
 Thursday,Hunes(9:30am-3:30pm)p
-Friday,Hunes(9:30am-11:45am)p
+Friday,Hunes(9:30am-11:45am)p,Lifeguarding(2:45pm-4:00pm)
 Saturday,Hunes Beffa(7:00pm-7:30pm)p

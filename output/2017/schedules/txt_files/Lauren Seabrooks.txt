@@ -1,4 +1,4 @@
-Sunday,Munchkins(9:15am-11:45am)p,Hobart(12:00pm-2:30pm),StoryHour(4:45pm-6:00pm)
+Sunday,Munchkins(9:15am-11:45am)p,Hobart(12:00pm-2:30pm),StoryHour(4:45pm-6:00pm),Lifeguarding(2:45pm-4:00pm)
 Monday,Off Day(4:00pm-11:30pm),Munchkins(9:15am-3:15pm)p
 Tuesday,Off Day(6:00am-11:30pm)
 Wednesday

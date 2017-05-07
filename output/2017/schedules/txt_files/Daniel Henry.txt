@@ -1,5 +1,5 @@
 Sunday,Sailing Clinic(10:30am-12:00pm)p,Sailing Clinic(1:00pm-2:00pm)p,Mido Sail(2:00pm-3:30pm)p
-Monday,Off Day(4:00pm-11:30pm),Sailing Clinic(1:00pm-4:00pm)p,Hobart(7:00am-10:30am)
+Monday,Off Day(4:00pm-11:30pm),Sailing Clinic(1:00pm-4:00pm)p,Hobart(7:00am-10:30am),Lifeguarding(10:45am-12:00pm)
 Tuesday,Off Day(6:00am-11:30pm)
 Wednesday,Brothers Grimm(8:00pm-10:00pm),Family Sail(1:00pm-3:30pm)p,Beffa 7:30-9:30 & Games Day 9:45-12 (7:30am-12:00pm)
 Thursday,Sailing Clinic(1:30pm-4:30pm)p

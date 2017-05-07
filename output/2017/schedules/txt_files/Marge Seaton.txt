@@ -1,7 +1,7 @@
 Sunday,Hunes(9:30am-11:45am)p,Rowing(6:15am-8:15am)
 Monday,Off Day(4:00pm-11:30pm),Hunes(9:30am-3:30pm)p
 Tuesday,Off Day(6:00am-11:30pm)
-Wednesday
+Wednesday,Lifeguarding(1:45pm-3:00pm)
 Thursday,Hunes(9:30am-3:30pm)p,MuSnoo Night(7:45pm-9:15pm)
 Friday,Hunes(9:30am-11:45am)p,Kid's Carnival(3:00pm-4:00pm)
 Saturday,Hunes Beffa(7:00pm-7:30pm)p

@@ -3,5 +3,5 @@ Monday,Off Day(4:00pm-11:30pm),Suaves(11:00am-3:00pm)p
 Tuesday,Off Day(6:00am-11:30pm)
 Wednesday,Boatster(4:30pm-6:15pm)
 Thursday,Suave Overnight(1:00pm-9:00pm)p,Suave Overnight Prep(12:00pm-1:00pm)p
-Friday,SuaveOvernight(6:00am-9:00am)p,Suaves(1:00pm-2:30pm)p,ICOM BEFFA(12:00pm-12:30pm)p,Hobart(5:30pm-8:00pm)
+Friday,SuaveOvernight(6:00am-9:00am)p,Suaves(1:00pm-2:30pm)p,ICOM BEFFA(12:00pm-12:30pm)p,Hobart(5:30pm-8:00pm),Lifeguarding(10:00am-11:00am)
 Saturday

@@ -3,5 +3,5 @@ Monday,Off Day(4:00pm-11:30pm),Midorees(9:30am-3:30pm)p
 Tuesday,Off Day(6:00am-11:30pm)
 Wednesday,Brothers Grimm(8:00pm-10:00pm),Beffa 7:30-9:30 & Games Day 9:45-12 (7:30am-12:00pm)
 Thursday,Midorees(8:00pm-9:15pm)p,Midorees(9:30am-3:30pm)p
-Friday,Midorees(9:30am-11:45am)p
+Friday,Midorees(9:30am-11:45am)p,Lifeguarding(12:45pm-2:00pm)
 Saturday,Hobart(7:00am-10:30am)

@@ -19,6 +19,7 @@ class Stapher:
 		self.special_shift_preferences = []
 		self.restricted_off_days = []
 		self.has_car = False
+		self.is_lifeguard = False
 		self.pairs_to_avoid = []
 		self.id = Stapher.id_counter
 		Stapher.id_counter += 1
@@ -71,6 +72,13 @@ class Stapher:
 				programming_shifts.append(shift)
 		return programming_shifts
 
+	def get_staphers_shifts_in_set(self,set_of_shifts):
+		shifts_in_set = []
+		my_shifts = self.all_shifts()
+		for shift in set_of_shifts:
+			if shift in my_shifts:
+				shifts_in_set.append(shift)
+		return shifts_in_set
 
 	def work_times_by_day(self):
 		work_times_by_day = {}

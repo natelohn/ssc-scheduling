@@ -1,7 +1,7 @@
 Sunday,Off Day(4:00pm-11:30pm),Hiking Meeting(10:00am-11:00am)p,Boat Dock Maint(9:15am-10:00am)p,Rowing(6:15am-8:15am)
 Monday,Off Day(6:00am-11:30pm)
 Tuesday,Medium Hike(9:30am-4:00pm)p
-Wednesday,Boat Dock Maint(10:30am-11:30am)p,Linen Exchange(8:45am-10:00am)
+Wednesday,Boat Dock Maint(10:30am-11:30am)p,Linen Exchange(8:45am-10:00am),Lifeguarding(3:45pm-5:00pm)
 Thursday,Long Hike(8:00am-5:00pm)p
 Friday,Hobart(7:00am-10:30am)
 Saturday,Boat Dock(4:00pm-6:00pm)p

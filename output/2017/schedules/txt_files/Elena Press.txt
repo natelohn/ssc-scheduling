@@ -1,6 +1,6 @@
 Sunday,Nature Boatster(9:00am-10:30am)p,Hunes Nature(2:00pm-3:00pm)p
 Monday,Mido Nature(9:30am-10:00am)p,DiscoBingo(7:00pm-9:00pm)
-Tuesday,Yahoo Nature(9:30am-10:15am)p,Snooper Nature(10:15am-11:15am)p
+Tuesday,Yahoo Nature(9:30am-10:15am)p,Snooper Nature(10:15am-11:15am)p,Lifeguarding(3:45pm-5:00pm)
 Wednesday,Campfire(7:00pm-9:00pm)
 Thursday,Off Day(4:00pm-11:30pm),Suave Nature(12:00pm-1:00pm)p,Munchkins Nature(1:00pm-2:00pm)p,Hobart(7:00am-10:30am)
 Friday,Off Day(6:00am-11:30pm)

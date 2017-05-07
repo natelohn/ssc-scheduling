@@ -2,6 +2,6 @@ Sunday,Chicken(9:00am-1:30pm)p,Astro Cruise(9:30pm-11:00pm)
 Monday,Chicken(9:00am-1:30pm)p,Chicken(4:30pm-8:00pm)p,Rowing(6:15am-8:15am)
 Tuesday,Off Day(4:00pm-11:30pm),Breakfast Chef(7:00am-11:00am)p
 Wednesday,Off Day(6:00am-11:30pm)
-Thursday,Chicken(4:30pm-8:00pm)p,Hobart(7:00am-10:30am)
+Thursday,Chicken(4:30pm-8:00pm)p,Hobart(7:00am-10:30am),Lifeguarding(12:45pm-2:00pm)
 Friday,Chicken(4:30pm-8:00pm)p
 Saturday,Chicken(9:00am-1:30pm)p

@@ -1,7 +1,7 @@
 Sunday,Off Day(4:00pm-11:30pm),Art Closet Clean(8:15am-9:15am)p,Art(9:15am-11:45am)p,Art Boatster(1:45pm-4:00pm)p
 Monday,Off Day(6:00am-11:30pm)
 Tuesday,Art(9:15am-11:45am)p,Art(1:45pm-4:15pm)p,Rowing(6:15am-8:15am)
-Wednesday,Welcome Board EVEN(9:00am-10:00am)p,Family Art(1:45pm-4:15pm)p
+Wednesday,Welcome Board EVEN(9:00am-10:00am)p,Family Art(1:45pm-4:15pm)p,Lifeguarding(11:45am-1:00pm)
 Thursday,Art(9:15am-11:45am)p,Art(1:45pm-4:15pm)p,Astro Cruise(9:30pm-11:00pm),StoryHour(4:45pm-6:00pm)
 Friday,Art(9:15am-11:45am)p,Art Social(3:30pm-5:00pm)p
 Saturday

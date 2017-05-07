@@ -3,5 +3,5 @@ Monday,Off Day(6:00am-11:30pm)
 Tuesday,Yahoos(9:30am-11:45am)p,Yahoos(2:00pm-4:00pm)p,Rowing(6:15am-8:15am),StoryHour(4:45pm-6:00pm)
 Wednesday,Brothers Grimm(8:00pm-10:00pm)
 Thursday,Yahoos(9:30am-3:30pm)p
-Friday,Yahoos(9:30am-11:45am)p
+Friday,Yahoos(9:30am-11:45am)p,Lifeguarding(1:45pm-3:00pm)
 Saturday

@@ -1,4 +1,4 @@
-Sunday,Yahoos Beffa(8:00am-9:30am)p,Yahoos(9:30am-11:45am)p,Yahoos(2:00pm-4:00pm)p,Wine(5:15pm-7:30pm)
+Sunday,Yahoos Beffa(8:00am-9:30am)p,Yahoos(9:30am-11:45am)p,Yahoos(2:00pm-4:00pm)p,Wine(5:15pm-7:30pm),Lifeguarding(12:45pm-2:00pm)
 Monday,Yahoos(9:30am-3:30pm)p,StoryHour(4:45pm-6:00pm)
 Tuesday,Yahoos(9:30am-11:45am)p,Yahoos(2:00pm-4:00pm)p
 Wednesday,Hobart(12:00pm-2:30pm)
