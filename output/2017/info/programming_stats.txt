@@ -49,10 +49,10 @@
 		Sat: 1 shifts, 1.0 hours
 
 =============================SKI-DOCK===============================
-101 TOTAL SHIFTS, 1 SHIFT(S) UNCOVERED!, 16 SHIFTS LONGER THAN 3 HOURS!
+101 TOTAL SHIFTS, 1 SHIFT(S) UNCOVERED!, 22 SHIFTS LONGER THAN 3 HOURS!
 UNCOVERED SHIFT(S):
 	Dock: Wednesday 16.0 - 17.0
-	Austin Jones, 18 programming shifts, 36.0 programming hours, 3 SHIFT(S) LONGER THAN 3 HOURS!
+	Austin Jones, 18 programming shifts, 36.0 programming hours, 4 SHIFT(S) LONGER THAN 3 HOURS!
 		Sun: 2 shifts, 3.5 hours
 		Mon: 0 shifts, 0 hours
 		Tues: 3 shifts, 7.5 hours
@@ -60,7 +60,7 @@ UNCOVERED SHIFT(S):
 		Thur: 3 shifts, 7.5 hours
 		Fri: 5 shifts, 9.0 hours
 		Sat: 1 shifts, 1.0 hours
-	Cody Hankins, 16 programming shifts, 31.25 programming hours, 2 SHIFT(S) LONGER THAN 3 HOURS!
+	Cody Hankins, 16 programming shifts, 31.25 programming hours, 3 SHIFT(S) LONGER THAN 3 HOURS!
 		Sun: 2 shifts, 4.25 hours
 		Mon: 4 shifts, 7.0 hours
 		Tues: 2 shifts, 5.5 hours
@@ -68,7 +68,7 @@ UNCOVERED SHIFT(S):
 		Thur: 0 shifts, 0 hours
 		Fri: 3 shifts, 5.75 hours
 		Sat: 1 shifts, 1.0 hours
-	Dylan Harding, 14 programming shifts, 28.0 programming hours, 3 SHIFT(S) LONGER THAN 3 HOURS!
+	Dylan Harding, 14 programming shifts, 28.0 programming hours, 4 SHIFT(S) LONGER THAN 3 HOURS!
 		Sun: 1 shifts, 2.0 hours
 		Mon: 4 shifts, 9.25 hours
 		Tues: 2 shifts, 4.25 hours
@@ -76,7 +76,7 @@ UNCOVERED SHIFT(S):
 		Thur: 2 shifts, 3.5 hours
 		Fri: 0 shifts, 0 hours
 		Sat: 1 shifts, 1.0 hours
-	Gavin Nelson, 18 programming shifts, 34.75 programming hours, 2 SHIFT(S) LONGER THAN 3 HOURS!
+	Gavin Nelson, 18 programming shifts, 34.75 programming hours, 3 SHIFT(S) LONGER THAN 3 HOURS!
 		Sun: 2 shifts, 4.75 hours
 		Mon: 0 shifts, 0 hours
 		Tues: 3 shifts, 4.75 hours
@@ -84,7 +84,7 @@ UNCOVERED SHIFT(S):
 		Thur: 3 shifts, 5.75 hours
 		Fri: 4 shifts, 9.75 hours
 		Sat: 1 shifts, 1.0 hours
-	Halle Payne, 18 programming shifts, 32.25 programming hours, 3 SHIFT(S) LONGER THAN 3 HOURS!
+	Halle Payne, 18 programming shifts, 32.25 programming hours, 4 SHIFT(S) LONGER THAN 3 HOURS!
 		Sun: 3 shifts, 4.75 hours
 		Mon: 4 shifts, 7.75 hours
 		Tues: 3 shifts, 4.75 hours
@@ -92,7 +92,7 @@ UNCOVERED SHIFT(S):
 		Thur: 2 shifts, 3.75 hours
 		Fri: 0 shifts, 0 hours
 		Sat: 1 shifts, 1.0 hours
-	Jonny Leung, 22 programming shifts, 37.33 programming hours, 3 SHIFT(S) LONGER THAN 3 HOURS!
+	Jonny Leung, 22 programming shifts, 37.33 programming hours, 4 SHIFT(S) LONGER THAN 3 HOURS!
 		Sun: 4 shifts, 8.0 hours
 		Mon: 2 shifts, 4.75 hours
 		Tues: 0 shifts, 0 hours

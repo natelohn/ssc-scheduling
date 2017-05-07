@@ -42,6 +42,13 @@ class Schedule:
 			last_time = time_set
 		return sorted(times)
 
+	def get_shift_at_time(self, day, start, end):
+		day_shifts = self.all_shifts[day]
+		for shift in day_shifts:
+			if shift.time_overlaps(start, end):
+				return shift
+		return None
+
 	def print_info(self):
 		days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
 		for i, day in enumerate(days):

@@ -1,7 +1,7 @@
-Sunday,Chicken(4:30pm-8:00pm)p
-Monday,Breakfast Chef(7:00am-11:00am)p,Off Day(4:00pm-11:30pm)
+Sunday,Chicken(4:30pm-8:00pm)p,Breakfast(8:15am-10:15am),Lunch(11:15am-2:00pm)
+Monday,Breakfast Chef(7:00am-11:00am)p,Off Day(4:00pm-11:30pm),Lunch(12:00pm-2:00pm)
 Tuesday,Off Day(6:00am-11:30pm)
-Wednesday,Brothers Grimm(8:00pm-10:00pm),Chicken(4:30pm-8:00pm)p
-Thursday,Chicken(9:00am-1:30pm)p
+Wednesday,Brothers Grimm(8:00pm-10:00pm),Chicken(4:30pm-8:00pm)p,Lunch(11:15am-2:00pm)
+Thursday,Chicken(9:00am-1:30pm)p,Dinner(5:15pm-8:00pm)
 Friday,Chicken(9:00am-1:30pm)p,Chicken(4:30pm-8:00pm)p,Kid's Carnival(3:00pm-4:00pm)
-Saturday,Chicken(9:00am-1:30pm)p
+Saturday,Chicken(9:00am-1:30pm)p,Dinner(5:15pm-8:00pm)

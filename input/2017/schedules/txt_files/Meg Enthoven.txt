@@ -1,7 +1,7 @@
-Sunday,Off Day(4:00pm-11:30pm),Breakfast Chef(7:00am-11:00am)p
+Sunday,Off Day(4:00pm-11:30pm),Breakfast Chef(7:00am-11:00am)p,Lunch(12:00pm-2:00pm)
 Monday,Off Day(6:00am-11:30pm)
-Tuesday,Chicken(4:30pm-8:00pm)p,Improv(8:00pm-10:00pm)
+Tuesday,Chicken(4:30pm-8:00pm)p,Improv(8:00pm-10:00pm),Lunch(11:45am-1:00pm)
 Wednesday,Chicken(9:00am-1:30pm)p,Chicken(4:30pm-8:00pm)p
-Thursday,Chicken(4:30pm-8:00pm)p,Hobart(12:00pm-2:30pm)
-Friday,Breakfast Chef(7:00am-11:00am)p,Music Hour(5:30pm-7:00pm)
+Thursday,Chicken(4:30pm-8:00pm)p,Hobart(12:00pm-2:30pm),Breakfast(6:45am-10:15am)
+Friday,Breakfast Chef(7:00am-11:00am)p,Music Hour(5:30pm-7:00pm),Lunch(12:00pm-2:00pm)
 Saturday,Chicken(4:30pm-8:00pm)p

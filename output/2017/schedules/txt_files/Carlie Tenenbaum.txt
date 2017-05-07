@@ -1,7 +1,7 @@
 Sunday,Chicken(9:00am-1:30pm)p,Social Hike(5:00pm-6:00pm)
-Monday,Chicken(4:30pm-8:00pm)p
+Monday,Chicken(4:30pm-8:00pm)p,Breakfast(6:45am-10:15am),Lunch(12:00pm-2:00pm)
 Tuesday,Chicken(9:00am-1:30pm)p,Chicken(4:30pm-8:00pm)p
-Wednesday,Breakfast Chef(7:00am-11:00am)p,Off Day(4:00pm-11:30pm)
+Wednesday,Breakfast Chef(7:00am-11:00am)p,Off Day(4:00pm-11:30pm),Lunch(11:45am-1:00pm)
 Thursday,Off Day(6:00am-11:30pm)
-Friday,Chicken(4:30pm-8:00pm)p,Staph v. Guest Vball(2:00pm-4:00pm)
+Friday,Chicken(4:30pm-8:00pm)p,Staph v. Guest Vball(2:00pm-4:00pm),Lunch(12:00pm-2:00pm),Breakfast Head(6:45am-10:15am)
 Saturday,Chicken(9:00am-1:30pm)p,Hobart(5:30pm-8:00pm)

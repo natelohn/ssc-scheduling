@@ -1,7 +1,7 @@
 Sunday,Munchkins(9:15am-11:45am)p,Social Hike(5:00pm-6:00pm)
-Monday,Munchkins(9:15am-3:15pm)p
-Tuesday,Munchkins(9:15am-11:45am)p
-Wednesday,Off Day(4:00pm-11:30pm),Hobart(7:00am-10:30am)
+Monday,Munchkins(9:15am-3:15pm)p,Dinner(5:15pm-8:00pm)
+Tuesday,Munchkins(9:15am-11:45am)p,Breakfast(7:30am-9:00am),Dinner Head(5:15pm-8:00pm)
+Wednesday,Off Day(4:00pm-11:30pm),Hobart(7:00am-10:30am),Lunch(11:45am-1:00pm)
 Thursday,Off Day(6:00am-11:30pm)
-Friday,Munchkins(9:15am-11:45am)p
-Saturday,MunchBeffa(6:00pm-6:30pm)p
+Friday,Munchkins(9:15am-11:45am)p,Dinner(5:30pm-7:00pm)
+Saturday,MunchBeffa(6:00pm-6:30pm)p,Breakfast(8:15am-10:15am)
