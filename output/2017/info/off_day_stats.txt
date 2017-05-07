@@ -1,0 +1,151 @@
+SCORE: 172
+=========== SuMo ===========
+13 staphers
+GROUP SCORE:3
+	Gender Balence: 6 male, 7 female, 
+ 	Returner/New Balence: 5 new & 8 returning.
+ 		4 new females & 3 returning females.
+ 		1 new males & 5 returning males.
+ 	Class Year:
+		5 in 2017: 4 males, 1 females.
+		3 in 2018: 1 males, 2 females.
+		2 in 2019: 1 males, 1 females.
+		3 in 2020: 0 males, 3 females.
+
+ 	7 people have cars: Austin Jones,Carinne Gale,Gabri Posard,Gavin Nelson,Michael Kim,Thomas Reidy,Tony Moller,
+ 	1 bad pair(s): Gavin Nelson,Thomas Reidy, 
+ 	Positions:
+ 		1 midorees
+ 		1 hiking
+ 		1 office
+ 		1 photo
+ 		1 arts
+ 		2 ski-dock
+ 		1 munchkins
+ 		1 yahoos
+ 		1 snoopers
+ 		1 chicken
+ 		1 menehunes
+ 		1 icom
+ 		1 boat-dock-coordinator
+ 		1 suaves
+=========== MoTue ===========
+13 staphers
+GROUP SCORE:45
+	Gender Balence: 6 male, 7 female, 
+ 	Returner/New Balence: 7 new & 6 returning.
+ 		3 new females & 4 returning females.
+ 		4 new males & 2 returning males.
+ 	Class Year:
+		4 in 2017: 2 males, 2 females.
+		3 in 2018: 2 males, 1 females.
+		3 in 2019: 0 males, 3 females.
+		3 in 2020: 2 males, 1 females.
+
+ 	5 people have cars: Brooke Hale,Lauren Seabrooks,Marge Seaton,Martine Johannessen,Sean Metzger,
+ 	0 bad pair(s): 
+ 	Positions:
+ 		1 midorees
+ 		1 theater
+ 		1 sailing
+ 		2 icom
+ 		1 ski-dock
+ 		1 yahoos
+ 		1 manager
+ 		1 music
+ 		1 munchkins
+ 		1 crafts
+ 		1 snoopers
+ 		2 chicken
+ 		1 menehunes
+ 		1 sdh
+ 		1 photo
+ 		1 suaves
+=========== TueWay ===========
+12 staphers
+GROUP SCORE:76
+	Gender Balence: 6 male, 6 female, 
+ 	Returner/New Balence: 6 new & 6 returning.
+ 		3 new females & 3 returning females.
+ 		3 new males & 3 returning males.
+ 	Class Year:
+		1 in 2016: 1 males, 0 females.
+		4 in 2017: 2 males, 2 females.
+		3 in 2018: 1 males, 2 females.
+		3 in 2019: 2 males, 1 females.
+		1 in 2020: 0 males, 1 females.
+
+ 	6 people have cars: Elie Kuppermann,Nate Lohn,Nico Ponza,Tommy Meaney,Tracy Roberts,Wyatt Horan,
+ 	0 bad pair(s): 
+ 	Positions:
+ 		1 midorees
+ 		1 naturalist
+ 		1 chicken
+ 		1 yahoos
+ 		1 menehunes
+ 		1 kgc
+ 		1 staph-d
+ 		1 snoopers
+ 		2 teens
+ 		2 icom
+ 		1 manager
+ 		2 suaves
+=========== WeThur ===========
+12 staphers
+GROUP SCORE:21
+	Gender Balence: 5 male, 7 female, 
+ 	Returner/New Balence: 6 new & 6 returning.
+ 		4 new females & 3 returning females.
+ 		2 new males & 3 returning males.
+ 	Class Year:
+		1 in 2016: 0 males, 1 females.
+		2 in 2017: 1 males, 1 females.
+		5 in 2018: 2 males, 3 females.
+		3 in 2019: 1 males, 2 females.
+		1 in 2020: 1 males, 0 females.
+
+ 	7 people have cars: Anne Bertram,Cody Hankins,Ian Jones,James Price,Mark Ibanez,Mel Huang,Tara McCullough,
+ 	1 bad pair(s): Mark Ibanez,Tara McCullough, 
+ 	Positions:
+ 		1 midorees
+ 		1 office
+ 		1 ski-dock
+ 		1 volleyball
+ 		1 yahoos
+ 		1 teens
+ 		1 manager
+ 		1 munchkins
+ 		1 iic
+ 		1 snoopers
+ 		1 climbing
+ 		1 chicken
+ 		1 menehunes
+ 		2 icom
+ 		1 boat-dock-coordinator
+=========== StirFry ===========
+12 staphers
+GROUP SCORE:27
+	Gender Balence: 6 male, 6 female, 
+ 	Returner/New Balence: 7 new & 5 returning.
+ 		4 new females & 2 returning females.
+ 		3 new males & 3 returning males.
+ 	Class Year:
+		1 in 2017: 1 males, 0 females.
+		3 in 2018: 1 males, 2 females.
+		4 in 2019: 3 males, 1 females.
+		4 in 2020: 1 males, 3 females.
+
+ 	5 people have cars: A.J. Aldana,Carter Kremer,Danny LaPorte,Halle Payne,Kaylee Blevins,
+ 	2 bad pair(s): Ben Josie,Carter Kremer, Halle Payne,Kaylee Blevins, 
+ 	Positions:
+ 		1 midorees
+ 		1 yoga
+ 		1 hiking
+ 		1 tennis
+ 		2 ski-dock
+ 		1 menehunes
+ 		1 munchkins
+ 		1 yahoos
+ 		1 snoopers
+ 		1 chicken
+ 		1 kids-naturalist

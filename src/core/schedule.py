@@ -19,11 +19,16 @@ class Schedule:
 		shift.covered = True
 		self.all_shifts[shift.day].append(shift)
 		self.total_shifts = self.total_shifts + 1
+		if shift.is_programming:
+			self.programming_hours += shift.length
 
 	def remove_shift(self,shift):
 		shift.covered = False
+		shift.stapher = None
 		self.all_shifts[shift.day].remove(shift)
 		self.total_shifts = self.total_shifts - 1
+		if shift.is_programming:
+			self.programming_hours -= shift.length
 
 	def get_sorted_shift_times_for_day(self,day):
 		times = []
@@ -33,7 +38,7 @@ class Schedule:
 		last_time = [0,0]
 		for time_set in sorted(times):
 			if last_time[1] > time_set[0]:
-				print '*****************************************I FUCKED UP SORTING TIMES!*****************************************', last_time,time_set
+				print '******I **CKED UP SORTING TIMES!******', last_time,time_set
 			last_time = time_set
 		return sorted(times)
 

@@ -1,0 +1,700 @@
+
+=============================STAPH-D===============================
+7 TOTAL SHIFTS, 0 SHIFT(S) UNCOVERED!
+	Nate Lohn, 8 programming shifts, 94.5 programming hours
+		Sun: 1 shifts, 17.0 hours
+		Mon: 1 shifts, 17.0 hours
+		Tues: 1 shifts, 9.5 hours
+		Wed: 0 shifts, 0 hours
+		Thur: 1 shifts, 17.0 hours
+		Fri: 3 shifts, 17.0 hours
+		Sat: 1 shifts, 17.0 hours
+
+=============================OFFICE===============================
+21 TOTAL SHIFTS, 0 SHIFT(S) UNCOVERED!
+	Caleb Martin, 9 programming shifts, 21.5 programming hours
+		Sun: 2 shifts, 5.5 hours
+		Mon: 3 shifts, 7.5 hours
+		Tues: 0 shifts, 0 hours
+		Wed: 0 shifts, 0 hours
+		Thur: 0 shifts, 0 hours
+		Fri: 1 shifts, 2.0 hours
+		Sat: 3 shifts, 6.5 hours
+	Michael Kim, 12 programming shifts, 26.5 programming hours
+		Sun: 1 shifts, 1.0 hours
+		Mon: 0 shifts, 0 hours
+		Tues: 2 shifts, 6.0 hours
+		Wed: 3 shifts, 6.5 hours
+		Thur: 3 shifts, 6.5 hours
+		Fri: 0 shifts, 0 hours
+		Sat: 3 shifts, 6.5 hours
+
+=============================PHOTO===============================
+34 TOTAL SHIFTS, 0 SHIFT(S) UNCOVERED!
+	Sean Metzger, 18 programming shifts, 29.75 programming hours
+		Sun: 4 shifts, 6.0 hours
+		Mon: 1 shifts, 1.5 hours
+		Tues: 0 shifts, 0 hours
+		Wed: 4 shifts, 8.5 hours
+		Thur: 3 shifts, 3.5 hours
+		Fri: 5 shifts, 9.25 hours
+		Sat: 1 shifts, 1.0 hours
+	Sophie Stuber, 16 programming shifts, 29.5 programming hours
+		Sun: 2 shifts, 4.0 hours
+		Mon: 0 shifts, 0 hours
+		Tues: 3 shifts, 5.5 hours
+		Wed: 4 shifts, 7.75 hours
+		Thur: 3 shifts, 3.0 hours
+		Fri: 3 shifts, 8.25 hours
+		Sat: 1 shifts, 1.0 hours
+
+=============================SKI-DOCK===============================
+101 TOTAL SHIFTS, 1 SHIFT(S) UNCOVERED!, 15 SHIFTS LONGER THAN 3 HOURS!
+UNCOVERED SHIFT(S):
+	Dock: Wednesday 16.0 - 17.0
+	Austin Jones, 18 programming shifts, 36.0 programming hours, 3 SHIFT(S) LONGER THAN 3 HOURS!
+		Sun: 2 shifts, 3.5 hours
+		Mon: 0 shifts, 0 hours
+		Tues: 3 shifts, 7.5 hours
+		Wed: 4 shifts, 7.5 hours
+		Thur: 3 shifts, 7.5 hours
+		Fri: 5 shifts, 9.0 hours
+		Sat: 1 shifts, 1.0 hours
+	Cody Hankins, 16 programming shifts, 31.25 programming hours, 2 SHIFT(S) LONGER THAN 3 HOURS!
+		Sun: 2 shifts, 4.25 hours
+		Mon: 4 shifts, 7.0 hours
+		Tues: 2 shifts, 5.5 hours
+		Wed: 4 shifts, 7.75 hours
+		Thur: 0 shifts, 0 hours
+		Fri: 3 shifts, 5.75 hours
+		Sat: 1 shifts, 1.0 hours
+	Dylan Harding, 14 programming shifts, 28.0 programming hours, 3 SHIFT(S) LONGER THAN 3 HOURS!
+		Sun: 1 shifts, 2.0 hours
+		Mon: 4 shifts, 9.25 hours
+		Tues: 2 shifts, 4.25 hours
+		Wed: 4 shifts, 8.0 hours
+		Thur: 2 shifts, 3.5 hours
+		Fri: 0 shifts, 0 hours
+		Sat: 1 shifts, 1.0 hours
+	Gavin Nelson, 18 programming shifts, 34.75 programming hours, 2 SHIFT(S) LONGER THAN 3 HOURS!
+		Sun: 2 shifts, 4.75 hours
+		Mon: 0 shifts, 0 hours
+		Tues: 3 shifts, 4.75 hours
+		Wed: 5 shifts, 8.75 hours
+		Thur: 3 shifts, 5.75 hours
+		Fri: 4 shifts, 9.75 hours
+		Sat: 1 shifts, 1.0 hours
+	Halle Payne, 18 programming shifts, 32.25 programming hours, 2 SHIFT(S) LONGER THAN 3 HOURS!
+		Sun: 3 shifts, 4.75 hours
+		Mon: 4 shifts, 7.75 hours
+		Tues: 3 shifts, 4.75 hours
+		Wed: 5 shifts, 10.25 hours
+		Thur: 2 shifts, 3.75 hours
+		Fri: 0 shifts, 0 hours
+		Sat: 1 shifts, 1.0 hours
+	Jonny Leung, 22 programming shifts, 37.33 programming hours, 3 SHIFT(S) LONGER THAN 3 HOURS!
+		Sun: 4 shifts, 8.0 hours
+		Mon: 2 shifts, 4.75 hours
+		Tues: 0 shifts, 0 hours
+		Wed: 5 shifts, 7.83 hours
+		Thur: 4 shifts, 8.25 hours
+		Fri: 4 shifts, 5.75 hours
+		Sat: 3 shifts, 2.75 hours
+
+=============================MANAGER===============================
+3 TOTAL SHIFTS, 0 SHIFT(S) UNCOVERED!
+	Anne Bertram, 9 programming shifts, 17.5 programming hours
+		Sun: 2 shifts, 5.0 hours
+		Mon: 1 shifts, 2.0 hours
+		Tues: 1 shifts, 1.5 hours
+		Wed: 2 shifts, 4.5 hours
+		Thur: 0 shifts, 0 hours
+		Fri: 2 shifts, 4.0 hours
+		Sat: 1 shifts, 0.5 hours
+	Jonny Leung, 22 programming shifts, 37.33 programming hours
+		Sun: 4 shifts, 8.0 hours
+		Mon: 2 shifts, 4.75 hours
+		Tues: 0 shifts, 0 hours
+		Wed: 5 shifts, 7.83 hours
+		Thur: 4 shifts, 8.25 hours
+		Fri: 4 shifts, 5.75 hours
+		Sat: 3 shifts, 2.75 hours
+	Taylor Streaty, 8 programming shifts, 27.75 programming hours
+		Sun: 2 shifts, 5.25 hours
+		Mon: 1 shifts, 6.5 hours
+		Tues: 1 shifts, 2.25 hours
+		Wed: 0 shifts, 0 hours
+		Thur: 1 shifts, 6.25 hours
+		Fri: 1 shifts, 6.25 hours
+		Sat: 2 shifts, 1.25 hours
+
+=============================CHICKEN===============================
+44 TOTAL SHIFTS, 0 SHIFT(S) UNCOVERED!, 6 CHCIKEN SPLIT(S)!
+	Alec Villagomez, 7 programming shifts, 28.0 programming hours, 1 Breakfast Chef(s), 1 Chicken Split(s)
+		Sun: 1 shifts, 3.5 hours
+		Mon: 1 shifts, 4.5 hours
+		Tues: 0 shifts, 0 hours
+		Wed: 1 shifts, 3.5 hours
+		Thur: 2 shifts, 8.0 hours
+		Fri: 1 shifts, 4.5 hours
+		Sat: 1 shifts, 4.0 hours
+	Ben Josie, 7 programming shifts, 28.0 programming hours, 1 Breakfast Chef(s), 1 Chicken Split(s)
+		Sun: 1 shifts, 3.5 hours
+		Mon: 1 shifts, 3.5 hours
+		Tues: 2 shifts, 8.0 hours
+		Wed: 1 shifts, 4.5 hours
+		Thur: 1 shifts, 4.0 hours
+		Fri: 0 shifts, 0 hours
+		Sat: 1 shifts, 4.5 hours
+	Carlie Tenenbaum, 7 programming shifts, 28.0 programming hours, 1 Breakfast Chef(s), 1 Chicken Split(s)
+		Sun: 1 shifts, 4.5 hours
+		Mon: 1 shifts, 3.5 hours
+		Tues: 2 shifts, 8.0 hours
+		Wed: 1 shifts, 4.0 hours
+		Thur: 0 shifts, 0 hours
+		Fri: 1 shifts, 3.5 hours
+		Sat: 1 shifts, 4.5 hours
+	Martin Alcaraz Jr., 7 programming shifts, 28.0 programming hours, 1 Breakfast Chef(s), 1 Chicken Split(s)
+		Sun: 1 shifts, 3.5 hours
+		Mon: 1 shifts, 4.0 hours
+		Tues: 0 shifts, 0 hours
+		Wed: 1 shifts, 3.5 hours
+		Thur: 1 shifts, 4.5 hours
+		Fri: 2 shifts, 8.0 hours
+		Sat: 1 shifts, 4.5 hours
+	Meg Enthoven, 7 programming shifts, 26.5 programming hours, 2 Breakfast Chef(s), 1 Chicken Split(s)
+		Sun: 1 shifts, 4.0 hours
+		Mon: 0 shifts, 0 hours
+		Tues: 1 shifts, 3.5 hours
+		Wed: 2 shifts, 8.0 hours
+		Thur: 1 shifts, 3.5 hours
+		Fri: 1 shifts, 4.0 hours
+		Sat: 1 shifts, 3.5 hours
+	Wyatt Horan, 7 programming shifts, 28.0 programming hours, 1 Breakfast Chef(s), 1 Chicken Split(s)
+		Sun: 1 shifts, 4.5 hours
+		Mon: 2 shifts, 8.0 hours
+		Tues: 1 shifts, 4.0 hours
+		Wed: 0 shifts, 0 hours
+		Thur: 1 shifts, 3.5 hours
+		Fri: 1 shifts, 3.5 hours
+		Sat: 1 shifts, 4.5 hours
+
+=============================MIDOREES===============================
+41 TOTAL SHIFTS, 0 SHIFT(S) UNCOVERED, 0 SHIFTS WITHOUT BOTH GENDERS!
+	Alida Ratteray, 11 programming shifts, 29.25 programming hours
+		Sun: 4 shifts, 6.0 hours
+		Mon: 1 shifts, 6.0 hours
+		Tues: 2 shifts, 4.25 hours
+		Wed: 0 shifts, 0 hours
+		Thur: 2 shifts, 7.25 hours
+		Fri: 1 shifts, 2.25 hours
+		Sat: 1 shifts, 3.5 hours
+	DeMarcus Miller, 8 programming shifts, 22.25 programming hours
+		Sun: 4 shifts, 6.0 hours
+		Mon: 1 shifts, 6.0 hours
+		Tues: 2 shifts, 4.25 hours
+		Wed: 0 shifts, 0 hours
+		Thur: 1 shifts, 6.0 hours
+		Fri: 0 shifts, 0 hours
+		Sat: 0 shifts, 0 hours
+	Gabri Posard, 8 programming shifts, 18.5 programming hours
+		Sun: 3 shifts, 4.75 hours
+		Mon: 0 shifts, 0 hours
+		Tues: 2 shifts, 4.25 hours
+		Wed: 0 shifts, 0 hours
+		Thur: 2 shifts, 7.25 hours
+		Fri: 1 shifts, 2.25 hours
+		Sat: 0 shifts, 0 hours
+	James Price, 7 programming shifts, 17.25 programming hours
+		Sun: 3 shifts, 4.75 hours
+		Mon: 1 shifts, 6.0 hours
+		Tues: 2 shifts, 4.25 hours
+		Wed: 0 shifts, 0 hours
+		Thur: 0 shifts, 0 hours
+		Fri: 1 shifts, 2.25 hours
+		Sat: 0 shifts, 0 hours
+	Thomas Churchill, 8 programming shifts, 21.5 programming hours
+		Sun: 4 shifts, 6.0 hours
+		Mon: 1 shifts, 6.0 hours
+		Tues: 0 shifts, 0 hours
+		Wed: 0 shifts, 0 hours
+		Thur: 2 shifts, 7.25 hours
+		Fri: 1 shifts, 2.25 hours
+		Sat: 0 shifts, 0 hours
+
+=============================YOGA===============================
+11 TOTAL SHIFTS, 0 SHIFT(S) UNCOVERED!
+	Emily Ruan, 11 programming shifts, 15.0 programming hours
+		Sun: 2 shifts, 3.0 hours
+		Mon: 2 shifts, 3.0 hours
+		Tues: 4 shifts, 4.75 hours
+		Wed: 1 shifts, 1.5 hours
+		Thur: 2 shifts, 2.75 hours
+		Fri: 0 shifts, 0 hours
+		Sat: 0 shifts, 0 hours
+
+=============================HIKING===============================
+6 TOTAL SHIFTS, 0 SHIFT(S) UNCOVERED!
+	Susi Arguello, 3 programming shifts, 14.0 programming hours
+		Sun: 1 shifts, 1.0 hours
+		Mon: 1 shifts, 6.5 hours
+		Tues: 0 shifts, 0 hours
+		Wed: 0 shifts, 0 hours
+		Thur: 1 shifts, 6.5 hours
+		Fri: 0 shifts, 0 hours
+		Sat: 0 shifts, 0 hours
+	Tony Moller, 6 programming shifts, 20.25 programming hours
+		Sun: 2 shifts, 1.75 hours
+		Mon: 0 shifts, 0 hours
+		Tues: 1 shifts, 6.5 hours
+		Wed: 1 shifts, 1.0 hours
+		Thur: 1 shifts, 9.0 hours
+		Fri: 0 shifts, 0 hours
+		Sat: 1 shifts, 2.0 hours
+
+=============================ICOM===============================
+7 TOTAL SHIFTS, 0 SHIFT(S) UNCOVERED!
+	Anne Bertram, 9 programming shifts, 17.5 programming hours
+		Sun: 2 shifts, 5.0 hours
+		Mon: 1 shifts, 2.0 hours
+		Tues: 1 shifts, 1.5 hours
+		Wed: 2 shifts, 4.5 hours
+		Thur: 0 shifts, 0 hours
+		Fri: 2 shifts, 4.0 hours
+		Sat: 1 shifts, 0.5 hours
+	Austin Jones, 18 programming shifts, 36.0 programming hours
+		Sun: 2 shifts, 3.5 hours
+		Mon: 0 shifts, 0 hours
+		Tues: 3 shifts, 7.5 hours
+		Wed: 4 shifts, 7.5 hours
+		Thur: 3 shifts, 7.5 hours
+		Fri: 5 shifts, 9.0 hours
+		Sat: 1 shifts, 1.0 hours
+	Lauren Seabrooks, 6 programming shifts, 18.0 programming hours
+		Sun: 1 shifts, 2.5 hours
+		Mon: 1 shifts, 6.0 hours
+		Tues: 0 shifts, 0 hours
+		Wed: 0 shifts, 0 hours
+		Thur: 1 shifts, 6.0 hours
+		Fri: 2 shifts, 3.0 hours
+		Sat: 1 shifts, 0.5 hours
+	Mark Ibanez, 8 programming shifts, 17.75 programming hours
+		Sun: 2 shifts, 4.25 hours
+		Mon: 1 shifts, 6.0 hours
+		Tues: 2 shifts, 4.25 hours
+		Wed: 0 shifts, 0 hours
+		Thur: 0 shifts, 0 hours
+		Fri: 2 shifts, 2.75 hours
+		Sat: 1 shifts, 0.5 hours
+	Martine Johannessen, 10 programming shifts, 23.75 programming hours
+		Sun: 4 shifts, 5.75 hours
+		Mon: 1 shifts, 4.0 hours
+		Tues: 0 shifts, 0 hours
+		Wed: 0 shifts, 0 hours
+		Thur: 2 shifts, 9.0 hours
+		Fri: 3 shifts, 5.0 hours
+		Sat: 0 shifts, 0 hours
+	Nate Lohn, 8 programming shifts, 94.5 programming hours
+		Sun: 1 shifts, 17.0 hours
+		Mon: 1 shifts, 17.0 hours
+		Tues: 1 shifts, 9.5 hours
+		Wed: 0 shifts, 0 hours
+		Thur: 1 shifts, 17.0 hours
+		Fri: 3 shifts, 17.0 hours
+		Sat: 1 shifts, 17.0 hours
+	Tommy Meaney, 10 programming shifts, 30.0 programming hours
+		Sun: 3 shifts, 12.5 hours
+		Mon: 2 shifts, 6.0 hours
+		Tues: 1 shifts, 5.0 hours
+		Wed: 0 shifts, 0 hours
+		Thur: 2 shifts, 4.0 hours
+		Fri: 2 shifts, 2.5 hours
+		Sat: 0 shifts, 0 hours
+
+=============================TENNIS===============================
+8 TOTAL SHIFTS, 0 SHIFT(S) UNCOVERED!
+	Teo Camacho, 8 programming shifts, 16.25 programming hours
+		Sun: 1 shifts, 2.0 hours
+		Mon: 3 shifts, 5.25 hours
+		Tues: 2 shifts, 3.5 hours
+		Wed: 1 shifts, 3.5 hours
+		Thur: 1 shifts, 2.0 hours
+		Fri: 0 shifts, 0 hours
+		Sat: 0 shifts, 0 hours
+
+=============================YAHOOS===============================
+35 TOTAL SHIFTS, 0 SHIFT(S) UNCOVERED, 0 SHIFTS WITHOUT BOTH GENDERS!
+	Gracie Goheen, 7 programming shifts, 18.25 programming hours
+		Sun: 3 shifts, 5.75 hours
+		Mon: 0 shifts, 0 hours
+		Tues: 2 shifts, 4.25 hours
+		Wed: 0 shifts, 0 hours
+		Thur: 1 shifts, 6.0 hours
+		Fri: 1 shifts, 2.25 hours
+		Sat: 0 shifts, 0 hours
+	Ian Jones, 7 programming shifts, 18.25 programming hours
+		Sun: 3 shifts, 5.75 hours
+		Mon: 1 shifts, 6.0 hours
+		Tues: 2 shifts, 4.25 hours
+		Wed: 0 shifts, 0 hours
+		Thur: 0 shifts, 0 hours
+		Fri: 1 shifts, 2.25 hours
+		Sat: 0 shifts, 0 hours
+	Jaisel Sandhu, 8 programming shifts, 24.25 programming hours
+		Sun: 3 shifts, 5.75 hours
+		Mon: 1 shifts, 6.0 hours
+		Tues: 2 shifts, 4.25 hours
+		Wed: 0 shifts, 0 hours
+		Thur: 1 shifts, 6.0 hours
+		Fri: 1 shifts, 2.25 hours
+		Sat: 0 shifts, 0 hours
+	Julia Laurence, 6 programming shifts, 20.0 programming hours
+		Sun: 3 shifts, 5.75 hours
+		Mon: 1 shifts, 6.0 hours
+		Tues: 0 shifts, 0 hours
+		Wed: 0 shifts, 0 hours
+		Thur: 1 shifts, 6.0 hours
+		Fri: 1 shifts, 2.25 hours
+		Sat: 0 shifts, 0 hours
+	Kaylee Blevins, 7 programming shifts, 22.0 programming hours
+		Sun: 3 shifts, 5.75 hours
+		Mon: 1 shifts, 6.0 hours
+		Tues: 2 shifts, 4.25 hours
+		Wed: 0 shifts, 0 hours
+		Thur: 1 shifts, 6.0 hours
+		Fri: 0 shifts, 0 hours
+		Sat: 0 shifts, 0 hours
+
+=============================MUSIC===============================
+8 TOTAL SHIFTS, 0 SHIFT(S) UNCOVERED!
+	Brooke Hale, 11 programming shifts, 15.25 programming hours
+		Sun: 1 shifts, 1.5 hours
+		Mon: 2 shifts, 2.5 hours
+		Tues: 0 shifts, 0 hours
+		Wed: 2 shifts, 3.5 hours
+		Thur: 2 shifts, 2.5 hours
+		Fri: 4 shifts, 5.25 hours
+		Sat: 0 shifts, 0 hours
+
+=============================MUNCHKINS===============================
+20 TOTAL SHIFTS, 0 SHIFT(S) UNCOVERED, 0 SHIFTS WITHOUT BOTH GENDERS!
+	A.J. Aldana, 5 programming shifts, 17.5 programming hours
+		Sun: 1 shifts, 2.5 hours
+		Mon: 1 shifts, 6.0 hours
+		Tues: 1 shifts, 2.5 hours
+		Wed: 0 shifts, 0 hours
+		Thur: 1 shifts, 6.0 hours
+		Fri: 0 shifts, 0 hours
+		Sat: 1 shifts, 0.5 hours
+	Kady Richardson, 5 programming shifts, 14.0 programming hours
+		Sun: 1 shifts, 2.5 hours
+		Mon: 1 shifts, 6.0 hours
+		Tues: 1 shifts, 2.5 hours
+		Wed: 0 shifts, 0 hours
+		Thur: 0 shifts, 0 hours
+		Fri: 1 shifts, 2.5 hours
+		Sat: 1 shifts, 0.5 hours
+	Lauren Seabrooks, 6 programming shifts, 18.0 programming hours
+		Sun: 1 shifts, 2.5 hours
+		Mon: 1 shifts, 6.0 hours
+		Tues: 0 shifts, 0 hours
+		Wed: 0 shifts, 0 hours
+		Thur: 1 shifts, 6.0 hours
+		Fri: 2 shifts, 3.0 hours
+		Sat: 1 shifts, 0.5 hours
+	Leo Carney, 5 programming shifts, 14.0 programming hours
+		Sun: 1 shifts, 2.5 hours
+		Mon: 0 shifts, 0 hours
+		Tues: 1 shifts, 2.5 hours
+		Wed: 0 shifts, 0 hours
+		Thur: 1 shifts, 6.0 hours
+		Fri: 1 shifts, 2.5 hours
+		Sat: 1 shifts, 0.5 hours
+
+=============================SNOOPERS===============================
+35 TOTAL SHIFTS, 0 SHIFT(S) UNCOVERED, 0 SHIFTS WITHOUT BOTH GENDERS!
+	Carinne Gale, 7 programming shifts, 17.25 programming hours
+		Sun: 2 shifts, 4.25 hours
+		Mon: 0 shifts, 0 hours
+		Tues: 2 shifts, 4.25 hours
+		Wed: 0 shifts, 0 hours
+		Thur: 1 shifts, 6.0 hours
+		Fri: 1 shifts, 2.25 hours
+		Sat: 1 shifts, 0.5 hours
+	Carter Kremer, 7 programming shifts, 21.0 programming hours
+		Sun: 2 shifts, 4.25 hours
+		Mon: 1 shifts, 6.0 hours
+		Tues: 2 shifts, 4.25 hours
+		Wed: 0 shifts, 0 hours
+		Thur: 1 shifts, 6.0 hours
+		Fri: 0 shifts, 0 hours
+		Sat: 1 shifts, 0.5 hours
+	Elie Kuppermann, 8 programming shifts, 23.25 programming hours
+		Sun: 2 shifts, 4.25 hours
+		Mon: 1 shifts, 6.0 hours
+		Tues: 2 shifts, 4.25 hours
+		Wed: 0 shifts, 0 hours
+		Thur: 1 shifts, 6.0 hours
+		Fri: 1 shifts, 2.25 hours
+		Sat: 1 shifts, 0.5 hours
+	Mark Ibanez, 8 programming shifts, 17.75 programming hours
+		Sun: 2 shifts, 4.25 hours
+		Mon: 1 shifts, 6.0 hours
+		Tues: 2 shifts, 4.25 hours
+		Wed: 0 shifts, 0 hours
+		Thur: 0 shifts, 0 hours
+		Fri: 2 shifts, 2.75 hours
+		Sat: 1 shifts, 0.5 hours
+	Michelle Hull, 6 programming shifts, 19.0 programming hours
+		Sun: 2 shifts, 4.25 hours
+		Mon: 1 shifts, 6.0 hours
+		Tues: 0 shifts, 0 hours
+		Wed: 0 shifts, 0 hours
+		Thur: 1 shifts, 6.0 hours
+		Fri: 1 shifts, 2.25 hours
+		Sat: 1 shifts, 0.5 hours
+
+=============================TEENS===============================
+25 TOTAL SHIFTS, 0 SHIFT(S) UNCOVERED, 0 SHIFTS WITHOUT BOTH GENDERS!
+	Ash Seth, 9 programming shifts, 29.5 programming hours
+		Sun: 3 shifts, 12.5 hours
+		Mon: 2 shifts, 6.0 hours
+		Tues: 1 shifts, 5.0 hours
+		Wed: 0 shifts, 0 hours
+		Thur: 2 shifts, 4.0 hours
+		Fri: 1 shifts, 2.0 hours
+		Sat: 0 shifts, 0 hours
+	Tara McCullough, 7 programming shifts, 25.5 programming hours
+		Sun: 3 shifts, 12.5 hours
+		Mon: 2 shifts, 6.0 hours
+		Tues: 1 shifts, 5.0 hours
+		Wed: 0 shifts, 0 hours
+		Thur: 0 shifts, 0 hours
+		Fri: 1 shifts, 2.0 hours
+		Sat: 0 shifts, 0 hours
+	Tommy Meaney, 10 programming shifts, 30.0 programming hours
+		Sun: 3 shifts, 12.5 hours
+		Mon: 2 shifts, 6.0 hours
+		Tues: 1 shifts, 5.0 hours
+		Wed: 0 shifts, 0 hours
+		Thur: 2 shifts, 4.0 hours
+		Fri: 2 shifts, 2.5 hours
+		Sat: 0 shifts, 0 hours
+
+=============================ARTS===============================
+11 TOTAL SHIFTS, 0 SHIFT(S) UNCOVERED!
+	Ali Black, 11 programming shifts, 23.25 programming hours
+		Sun: 3 shifts, 5.75 hours
+		Mon: 0 shifts, 0 hours
+		Tues: 2 shifts, 5.0 hours
+		Wed: 2 shifts, 3.5 hours
+		Thur: 2 shifts, 5.0 hours
+		Fri: 2 shifts, 4.0 hours
+		Sat: 0 shifts, 0 hours
+
+=============================KGC===============================
+7 TOTAL SHIFTS, 0 SHIFT(S) UNCOVERED!
+	Taylor Streaty, 8 programming shifts, 27.75 programming hours
+		Sun: 2 shifts, 5.25 hours
+		Mon: 1 shifts, 6.5 hours
+		Tues: 1 shifts, 2.25 hours
+		Wed: 0 shifts, 0 hours
+		Thur: 1 shifts, 6.25 hours
+		Fri: 1 shifts, 6.25 hours
+		Sat: 2 shifts, 1.25 hours
+
+=============================IIC===============================
+7 TOTAL SHIFTS, 0 SHIFT(S) UNCOVERED!
+	Anne Bertram, 9 programming shifts, 17.5 programming hours
+		Sun: 2 shifts, 5.0 hours
+		Mon: 1 shifts, 2.0 hours
+		Tues: 1 shifts, 1.5 hours
+		Wed: 2 shifts, 4.5 hours
+		Thur: 0 shifts, 0 hours
+		Fri: 2 shifts, 4.0 hours
+		Sat: 1 shifts, 0.5 hours
+
+=============================CLIMBING===============================
+9 TOTAL SHIFTS, 0 SHIFT(S) UNCOVERED!
+	Erika Noble, 9 programming shifts, 22.5 programming hours
+		Sun: 3 shifts, 6.5 hours
+		Mon: 2 shifts, 5.5 hours
+		Tues: 2 shifts, 6.5 hours
+		Wed: 1 shifts, 2.0 hours
+		Thur: 0 shifts, 0 hours
+		Fri: 1 shifts, 2.0 hours
+		Sat: 0 shifts, 0 hours
+
+=============================KIDS-NATURALIST===============================
+7 TOTAL SHIFTS, 0 SHIFT(S) UNCOVERED!
+	Elena Press, 7 programming shifts, 6.75 programming hours
+		Sun: 2 shifts, 2.5 hours
+		Mon: 1 shifts, 0.5 hours
+		Tues: 2 shifts, 1.75 hours
+		Wed: 0 shifts, 0 hours
+		Thur: 2 shifts, 2.0 hours
+		Fri: 0 shifts, 0 hours
+		Sat: 0 shifts, 0 hours
+
+=============================MENEHUNES===============================
+34 TOTAL SHIFTS, 0 SHIFT(S) UNCOVERED, 0 SHIFTS WITHOUT BOTH GENDERS!
+	Callie Heiderscheit, 7 programming shifts, 17.25 programming hours
+		Sun: 2 shifts, 4.25 hours
+		Mon: 0 shifts, 0 hours
+		Tues: 2 shifts, 4.25 hours
+		Wed: 0 shifts, 0 hours
+		Thur: 1 shifts, 6.0 hours
+		Fri: 1 shifts, 2.25 hours
+		Sat: 1 shifts, 0.5 hours
+	Danny LaPorte, 7 programming shifts, 21.0 programming hours
+		Sun: 2 shifts, 4.25 hours
+		Mon: 1 shifts, 6.0 hours
+		Tues: 2 shifts, 4.25 hours
+		Wed: 0 shifts, 0 hours
+		Thur: 1 shifts, 6.0 hours
+		Fri: 0 shifts, 0 hours
+		Sat: 1 shifts, 0.5 hours
+	Marge Seaton, 5 programming shifts, 17.0 programming hours
+		Sun: 1 shifts, 2.25 hours
+		Mon: 1 shifts, 6.0 hours
+		Tues: 0 shifts, 0 hours
+		Wed: 0 shifts, 0 hours
+		Thur: 1 shifts, 6.0 hours
+		Fri: 1 shifts, 2.25 hours
+		Sat: 1 shifts, 0.5 hours
+	Mel Huang, 7 programming shifts, 17.25 programming hours
+		Sun: 2 shifts, 4.25 hours
+		Mon: 1 shifts, 6.0 hours
+		Tues: 2 shifts, 4.25 hours
+		Wed: 0 shifts, 0 hours
+		Thur: 0 shifts, 0 hours
+		Fri: 1 shifts, 2.25 hours
+		Sat: 1 shifts, 0.5 hours
+	Nico Ponza, 8 programming shifts, 23.25 programming hours
+		Sun: 2 shifts, 4.25 hours
+		Mon: 1 shifts, 6.0 hours
+		Tues: 2 shifts, 4.25 hours
+		Wed: 0 shifts, 0 hours
+		Thur: 1 shifts, 6.0 hours
+		Fri: 1 shifts, 2.25 hours
+		Sat: 1 shifts, 0.5 hours
+
+=============================SDH===============================
+4 TOTAL SHIFTS, 0 SHIFT(S) UNCOVERED!
+	Jonny Leung, 22 programming shifts, 37.33 programming hours
+		Sun: 4 shifts, 8.0 hours
+		Mon: 2 shifts, 4.75 hours
+		Tues: 0 shifts, 0 hours
+		Wed: 5 shifts, 7.83 hours
+		Thur: 4 shifts, 8.25 hours
+		Fri: 4 shifts, 5.75 hours
+		Sat: 3 shifts, 2.75 hours
+
+=============================BOAT-DOCK-COORDINATOR===============================
+4 TOTAL SHIFTS, 0 SHIFT(S) UNCOVERED!
+	Molly Fogarty, 6 programming shifts, 13.0 programming hours
+		Sun: 1 shifts, 3.0 hours
+		Mon: 2 shifts, 2.0 hours
+		Tues: 0 shifts, 0 hours
+		Wed: 1 shifts, 2.5 hours
+		Thur: 0 shifts, 0 hours
+		Fri: 1 shifts, 3.5 hours
+		Sat: 1 shifts, 2.0 hours
+	Tony Moller, 6 programming shifts, 20.25 programming hours
+		Sun: 2 shifts, 1.75 hours
+		Mon: 0 shifts, 0 hours
+		Tues: 1 shifts, 6.5 hours
+		Wed: 1 shifts, 1.0 hours
+		Thur: 1 shifts, 9.0 hours
+		Fri: 0 shifts, 0 hours
+		Sat: 1 shifts, 2.0 hours
+
+=============================THEATER===============================
+3 TOTAL SHIFTS, 0 SHIFT(S) UNCOVERED!
+	Brooke Hale, 11 programming shifts, 15.25 programming hours
+		Sun: 1 shifts, 1.5 hours
+		Mon: 2 shifts, 2.5 hours
+		Tues: 0 shifts, 0 hours
+		Wed: 2 shifts, 3.5 hours
+		Thur: 2 shifts, 2.5 hours
+		Fri: 4 shifts, 5.25 hours
+		Sat: 0 shifts, 0 hours
+
+=============================SAILING===============================
+8 TOTAL SHIFTS, 0 SHIFT(S) UNCOVERED!
+	Daniel Henry, 8 programming shifts, 15.5 programming hours
+		Sun: 3 shifts, 4.0 hours
+		Mon: 1 shifts, 3.0 hours
+		Tues: 0 shifts, 0 hours
+		Wed: 1 shifts, 2.5 hours
+		Thur: 1 shifts, 3.0 hours
+		Fri: 2 shifts, 3.0 hours
+		Sat: 0 shifts, 0 hours
+
+=============================NATURALIST===============================
+2 TOTAL SHIFTS, 0 SHIFT(S) UNCOVERED!
+	Kate Roberts, 2 programming shifts, 8.0 programming hours
+		Sun: 1 shifts, 1.5 hours
+		Mon: 0 shifts, 0 hours
+		Tues: 0 shifts, 0 hours
+		Wed: 0 shifts, 0 hours
+		Thur: 1 shifts, 6.5 hours
+		Fri: 0 shifts, 0 hours
+		Sat: 0 shifts, 0 hours
+
+=============================VOLLEYBALL===============================
+5 TOTAL SHIFTS, 0 SHIFT(S) UNCOVERED!
+	Molly Fogarty, 6 programming shifts, 13.0 programming hours
+		Sun: 1 shifts, 3.0 hours
+		Mon: 2 shifts, 2.0 hours
+		Tues: 0 shifts, 0 hours
+		Wed: 1 shifts, 2.5 hours
+		Thur: 0 shifts, 0 hours
+		Fri: 1 shifts, 3.5 hours
+		Sat: 1 shifts, 2.0 hours
+
+=============================CRAFTS===============================
+10 TOTAL SHIFTS, 0 SHIFT(S) UNCOVERED!
+	McKenzie Lynch, 10 programming shifts, 18.5 programming hours
+		Sun: 4 shifts, 6.0 hours
+		Mon: 1 shifts, 2.5 hours
+		Tues: 0 shifts, 0 hours
+		Wed: 1 shifts, 2.5 hours
+		Thur: 2 shifts, 5.0 hours
+		Fri: 2 shifts, 2.5 hours
+		Sat: 0 shifts, 0 hours
+
+=============================SUAVES===============================
+40 TOTAL SHIFTS, 0 SHIFT(S) UNCOVERED, 0 SHIFTS WITHOUT BOTH GENDERS!
+	Ariel Bong, 11 programming shifts, 26.25 programming hours
+		Sun: 4 shifts, 5.75 hours
+		Mon: 1 shifts, 4.0 hours
+		Tues: 2 shifts, 3.0 hours
+		Wed: 0 shifts, 0 hours
+		Thur: 2 shifts, 9.0 hours
+		Fri: 2 shifts, 4.5 hours
+		Sat: 0 shifts, 0 hours
+	Martine Johannessen, 10 programming shifts, 23.75 programming hours
+		Sun: 4 shifts, 5.75 hours
+		Mon: 1 shifts, 4.0 hours
+		Tues: 0 shifts, 0 hours
+		Wed: 0 shifts, 0 hours
+		Thur: 2 shifts, 9.0 hours
+		Fri: 3 shifts, 5.0 hours
+		Sat: 0 shifts, 0 hours
+	Thomas Reidy, 10 programming shifts, 24.5 programming hours
+		Sun: 3 shifts, 4.5 hours
+		Mon: 0 shifts, 0 hours
+		Tues: 2 shifts, 3.0 hours
+		Wed: 0 shifts, 0 hours
+		Thur: 2 shifts, 9.0 hours
+		Fri: 2 shifts, 4.5 hours
+		Sat: 1 shifts, 3.5 hours
+	Tracy Roberts, 11 programming shifts, 26.25 programming hours
+		Sun: 4 shifts, 5.75 hours
+		Mon: 1 shifts, 4.0 hours
+		Tues: 2 shifts, 3.0 hours
+		Wed: 0 shifts, 0 hours
+		Thur: 2 shifts, 9.0 hours
+		Fri: 2 shifts, 4.5 hours
+		Sat: 0 shifts, 0 hours

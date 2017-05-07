@@ -12,12 +12,14 @@ class Stapher:
 	def __init__(self,name,summers,class_year,gender,positions):
 		self.name = name
 		self.summers = int(summers)
-		self.class_year = class_year
+		self.class_year = int(class_year)
 		self.gender = gender
 		self.positions = positions
 		self.schedule = Schedule()
 		self.special_shift_preferences = []
 		self.restricted_off_days = []
+		self.has_car = False
+		self.pairs_to_avoid = []
 		self.id = Stapher.id_counter
 		Stapher.id_counter += 1
 
@@ -40,6 +42,12 @@ class Stapher:
 				return False
 		return True
 
+	def all_shifts(self):
+		all_shifts = []
+		for day in self.schedule.all_shifts:
+			for shift in self.schedule.all_shifts[day]:
+				all_shifts.append(shift)
+		return all_shifts
 
 	def all_programming_shifts(self):
 		all_programming_shifts = []
@@ -48,6 +56,20 @@ class Stapher:
 				if shift.is_programming:
 					all_programming_shifts.append(shift)
 		return all_programming_shifts
+
+	def get_programming_hours_by_day(self,day):
+		programming_hours = 0
+		for shift in self.schedule.all_shifts[day]:
+			if shift.is_programming:
+				programming_hours += shift.length
+		return programming_hours
+
+	def get_programming_shifts_by_day(self,day):
+		programming_shifts = []
+		for shift in self.schedule.all_shifts[day]:
+			if shift.is_programming:
+				programming_shifts.append(shift)
+		return programming_shifts
 
 
 	def work_times_by_day(self):
@@ -98,16 +120,22 @@ class Stapher:
 		
 
 	def add_shift(self, shift):
+		if shift.covered:
+			print self.name,'CANNOT TAKE',shift,'. IT IS ALREADY COVERED BY',shift.stapher.name
+			quit()
 		if self.free_during_shift(shift):
 			self.schedule.add_shift(shift)
 			shift.stapher = self
 		else:
-			print 'ERROR: CAN NOT ADD SHIFT', shift, 'TO', self.name, 'SCHEDULE'
+			print 'ERROR: CAN NOT ADD SHIFT "' +  str(shift) + '" TO', self.name, 'SCHEDULE.'
+			quit()
 
 	def remove_shift(self, shift):
 		self.schedule.remove_shift(shift)
-		shift.stapher = None
 		
+	def print_schedule(self):
+		self.schedule.print_info()
+
 	def print_info(self):
 		print str(self)
 
